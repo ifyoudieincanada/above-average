@@ -10,6 +10,18 @@ import Foundation
 
 import UIKit
 
+class Semester: NSObject {
+    var term:String
+    var year:Int
+    var courses:[Course]
+    
+    init(a:String, b:Int) {
+        term = a
+        year = b
+        courses = []
+    }
+}
+
 class Course: NSObject {
     var name:String
     var identifier:String
