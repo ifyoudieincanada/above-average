@@ -1,5 +1,3 @@
-// JESSICA
-
 import UIKit
 
 class Course {
@@ -9,12 +7,34 @@ class Course {
     var assignments:[Assignment]
     var overallPercent:Double
     
-    init() {
-        //error: return from initializer without initalizing all stored properties
+    init(a:String, b:String) {
+        name = a
+        identifier = b
+        assignmentCategories = []
+        assignments = []
+        overallPercent = 0.0
     }
-    // @TODO add assignment category
+    
+    // add assignment category
+    func addCategory(cat:(a:String, b:Int)) {
+        // @TODO check if category with that name already exists with for each
+        assignmentCategories += [cat] //or use append?
+    }
+    
+    // @TODO update assignment categories
+    func updateCategory(cats:[(a:String, b:Int)]) {
+        assignmentCategories += cats //or use append?
+    }
     
     // @TODO remove assignment category
+    func removeCategory(removeMe:String, assignmentCategories:[(a:String, b:Int)]) {
+        list = list.filter() { $0 !== removeMe }
+    }
+    
+    // @TODO add assignment
+    func addAssignment() {
+        assignments += []
+    }
     
     // do the categories add up to 100%
     func weightCheck(assignmentCategories:[(category:String,weight:Int)]) -> Bool {
@@ -30,7 +50,6 @@ class Course {
     }
 }
 
-// JESSICA
 class Grade {
     func calculateCategory(category:String, weight:Int, assignments:[Assignment]) -> Double {
         var categoryTotal:Double = 0
@@ -41,19 +60,28 @@ class Grade {
     }
 }
 
-// Nick
 class Assignment {
-    var assignmentName:String
+    var name:String
     var done:Bool
-    var assignmentDate:Date
-    var dueDate:Date
-    var pointsPossible:Double
+    var due:Date
     var pointsEarned:Double
-    var finalGrade:Double
-    init() {
-        //@TODO: Figure out how to take in variables
-        //error: return from initializer without initalizing all stored properties
+    var pointsPossible:Double
+    var percentage:Double
+    
+    init(a:String, b:Bool, c:Date, d:Bool, e:Double, f:Double) {
+        name = a
+        done = b
+        due = c
+        pointsEarned = e
+        if d == true {
+            pointsPossible = f
+            percentage = e/f
+        } else {
+            pointsPossible = 100
+            percentage = e            
+        } 
     }
+    
     
 }
 
