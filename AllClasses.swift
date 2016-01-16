@@ -26,14 +26,14 @@ class Course {
         assignmentCategories += cats //or use append?
     }
     
-    // @TODO update assignment categories 
-    func updateCategories {
-    
+    // @TODO update assignment categories
+    func updateCategories() {
+        
     }
     
     // @TODO remove assignment category
     func removeCategory(removeMe:String) {
-        assignmentCategories = assignmentCategories.filter({ $0.category !== removeMe }) 
+        assignmentCategories = assignmentCategories.filter({ $0.category != removeMe })
     }
     
     // @TODO add assignment
@@ -66,7 +66,7 @@ class Grade {
                 counter += 1
             }
         }
-        return Double(categorySum/counter)
+        return Double(categorySum/Double(counter))
     }
     
     func calculateWeightedTotal(assignmentCategories:[(category:String,weight:Int,avg:Double)]) -> Double {
@@ -75,7 +75,7 @@ class Grade {
             overall += a.avg * Double(a.weight/100)
         }
         return overall
-    }    
+    }
 }
 
 class Assignment {
