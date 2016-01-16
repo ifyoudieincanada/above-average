@@ -60,7 +60,126 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHc-3U-RYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="-180"/>
+            <point key="canvasLocation" x="1362" y="330"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Pqw-yd-oSj">
+            <objects>
+                <viewController id="K0K-SE-aLY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ojv-cC-g8Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="C0K-iV-lhv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GeL-ZF-Zcs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cao-L7-n3H">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="qws-yv-KPu"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7n-Dl-V1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="668"/>
+        </scene>
+        <!--Change Semester View Controller-->
+        <scene sceneID="l7s-mr-wUU">
+            <objects>
+                <viewController id="85q-SK-n2k" customClass="ChangeSemesterViewController" customModule="above_average" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C3o-kd-YFd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ew1-37-y9p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M0F-at-usq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQp-2q-Med">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Change Semester" id="V5m-nj-wPp">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Mim-Jk-bYF">
+                                            <connections>
+                                                <segue destination="dZV-fw-47D" kind="show" id="i0U-TE-R1Q"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VyJ-5M-4OE"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rvi-5Y-suC">
+                                <rect key="frame" x="0.0" y="108" width="320" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="semesterListPicker" destination="Rvi-5Y-suC" id="OXg-j5-c7n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KC9-Mg-QNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="-22"/>
+        </scene>
+        <!--AddA Semester View Controller-->
+        <scene sceneID="XFq-dj-tre">
+            <objects>
+                <viewController id="20P-zb-Uej" customClass="AddASemesterViewController" customModule="above_average" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KaX-ZG-SJj"/>
+                        <viewControllerLayoutGuide type="bottom" id="rw6-Y4-8us"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hB5-e2-f1C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6px-K4-DlF">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Add A Semester" id="eac-8q-LBb">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="P2u-63-DbT">
+                                            <connections>
+                                                <segue destination="85q-SK-n2k" kind="show" id="Frm-3v-DJY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ARE-SU-VP8">
+                                            <connections>
+                                                <action selector="addSemesterButton:" destination="20P-zb-Uej" id="VGF-48-gxl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWm-Cr-B9i">
+                                <rect key="frame" x="87" y="138" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semester Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EX-Fy-gc6">
+                                <rect key="frame" x="99" y="96" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="semesterNameTextField" destination="cWm-Cr-B9i" id="PU8-Js-8Ag"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meT-zt-Khu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2266" y="-45"/>
         </scene>
         <!--Courses List View Controller-->
         <scene sceneID="wNL-s4-ubW">
@@ -267,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3b-gz-J9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="-198"/>
+            <point key="canvasLocation" x="2725" y="-444"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="eUw-Hj-b78">
@@ -340,7 +459,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4R-7m-KhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3076" y="-198"/>
+            <point key="canvasLocation" x="3074" y="-444"/>
         </scene>
         <!--Edit Course View Controller-->
         <scene sceneID="V9a-MP-vve">
@@ -575,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJg-wx-7gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080" y="-174"/>
+            <point key="canvasLocation" x="2860" y="-201"/>
         </scene>
         <!--Course View Controller-->
         <scene sceneID="feH-h6-h4U">
@@ -667,11 +786,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <segue destination="akK-MY-dOQ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="lCX-Ko-luJ"/>
+                        <segue destination="RVT-Kc-qcM" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="uxM-yl-bY1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ic-PG-ezt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="-180"/>
+            <point key="canvasLocation" x="390" y="330"/>
         </scene>
         <!--Menu Courses List View Controller-->
         <scene sceneID="TII-Aj-sFX">
@@ -698,10 +818,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPx-sD-Efe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="-180"/>
+            <point key="canvasLocation" x="895" y="330"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="uxM-yl-bY1"/>
         <segue reference="Mvp-12-gvw"/>
     </inferredMetricsTieBreakers>
 </document>
