@@ -6,27 +6,107 @@
 //  Copyright © 2016 Kyra Drake. All rights reserved.
 //
 
+
+
+
 import UIKit
 
 class CoursesListViewController: UIViewController {
     
-    
-    @IBOutlet weak var semesterMenuButton: UIBarButtonItem!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet weak var semesterCoursesTable: UITableView!
     
-    //SEMESTER COURSES TABLE STUFF
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 1        //return number of courses in the semester
+        //return 1
+        return courseArray.count        //return number of courses in the semester
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
-        //cell.textLabel?.text = toDoList[indexPath.row]
+        //cell.textLabel?.text = "cell"
+        cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {     //swipee to the left (delete)
+            
+            courseArray.removeAtIndex(indexPath.row)
+            
+            semesterCoursesTable.reloadData()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        semesterCoursesTable.reloadData()
+    }
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        /*
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }*/
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+import UIKit
+
+//var courseArray = [Course]()
+
+class CoursesListViewController: UIViewController {
+    
+    
+    //@IBOutlet weak var semesterMenuButton: UIBarButtonItem!
+    
+    @IBOutlet weak var semesterCoursesTable: UITableView!
+    
+    //SEMESTER COURSES TABLE STUFF
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+       // return courseArray.count        //return number of courses in the semester
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        
+        cell.textLabel?.text = "cell"
+        //cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
         
         return cell
     }
@@ -37,7 +117,7 @@ class CoursesListViewController: UIViewController {
             
             //toDoList.removeAtIndex(indexPath.row)
             
-            semesterCoursesTable.reloadData()
+            //semesterCoursesTable.reloadData()
         }
     }
     
@@ -51,12 +131,12 @@ class CoursesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        /*
         if self.revealViewController() != nil {
             semesterMenuButton.target = self.revealViewController()
             semesterMenuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        }*/
     }
     
     override func didReceiveMemoryWarning() {
@@ -64,3 +144,4 @@ class CoursesListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+*/
