@@ -27,7 +27,7 @@ class Semester: NSObject {
 class Course: NSObject {
     var name:String
     var identifier:String
-    var assignmentCategories:[(category:String,weight:Int,avg:Double)]
+    var assignmentCategories:[(category:String,weight:Int,avg:Double,incat:[Assignment])]
     var assignments:[Assignment]
     var overallPercent:Double
 
@@ -40,23 +40,41 @@ class Course: NSObject {
     }
 
     // add assignment category
-    func addCategory(cat:(a:String, b:Int, avg:Double)) {
+    func addCategory(cat:(a:String, b:Int, avg:Double, incat:[Assignment])) {
         // @TODO check if category with that name already exists with for each
         assignmentCategories += [cat] //or use append?
     }
 
-    // @TODO add assignment categories on course creation page
-    func addOnCreate(cats:[(a:String, b:Int, avg:Double)]) {
+    // @TODO add assignment categories on course creation page (can add multiple)
+    func addOnCreate(cats:[(a:String, b:Int, avg:Double, incat:[Assignment])]) {
         assignmentCategories += cats //or use append?
     }
 
     // @TODO update assignment categories
-    func updateCategories(a:String, b:Int) {
-        for cat in assignmentCategories {
-            if a == cat {
+    func updateCategories(a:[(b:String, c:Int)]) {
+        for element in a {
+            if containscat(assignmentCategories,element){ // check if category already exists
+                assignmentCategories. 
+            }else{ // add category if it does not exist
+                assignmentCategories += [(element.b, element.c, 0.0, [])]
+            }
+        }
+        for cat in assignmentCategories{
+            if !containscat(a,cat.category){ // delete the category if it doesn't exist in the new list
                 
             }
         }
+        
+    }
+    
+    func containscat(a:[(b:String, Int, Double, [Assignment])], check:String) -> Bool {
+        for element in a { if a.b == check { return true } }
+        return false
+    }
+    
+    func containscat(a:[(b:String, Int)], check:String) -> Bool {
+        for element in a { if a.b == check { return true } }
+        return false
     }
 
     // @TODO remove assignment category
@@ -111,7 +129,7 @@ class Course: NSObject {
 }
 
 class Grade: NSObject {
-    func calculateCategoryAvg(category:String, assignments:[Assignment]) -> Double {
+    func calculateCategoryAvg(assignments:[Assignment]) -> Double {
         var categorySum:Double = 0
         var counter:Int = 0
         for a in assignments {
