@@ -8,9 +8,12 @@
 
 import UIKit
 
+
 class AddACourseViewController: UIViewController, UITableViewDelegate {
     
     //GENERAL STUFF
+    
+    var c:Course?
     
     @IBOutlet weak var courseTitleTextField: UITextField!
     
@@ -19,6 +22,10 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     @IBAction func addCourseButton(sender: AnyObject) {
         
         //when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
+        
+        c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!)
+        
+        print(c)
     }
     
     //ASSIGNMENT CATEGORIES STUFF
@@ -30,6 +37,10 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     @IBAction func addCategoryButton(sender: AnyObject) {
         
         //when this button is pressed, read from the categoryName nad weight text fields and create a new assignment category
+        
+        let weight:Int = Int(weightTextField.text!)!
+        
+        c?.addCategory((a:categoryNameTextField.text!, b:weight, avg:Double(weight)))
     }
     
     //ASSIGNMENT CATEGORIES TABLE STUFF
@@ -41,7 +52,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1        //return count of the array of assignment categories
-    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -53,6 +64,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         return cell
     }
     
+        /*
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.Delete {     //swipe to the left (delete)
@@ -68,7 +80,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         //toDoListTable.reloadData()
     }
     
-    //OTHER STUFF
+    //OTHER STUFF*/
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,6 +22,7 @@
 		0B90F4BC1C4A0BA600B8C6BD /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */; };
 		0B90F4BE1C4A0C8800B8C6BD /* MenuCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */; };
 		0B90F4C01C4A0CA200B8C6BD /* MenuCoursesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */; };
+		0BFF63D21C4A6518007AF0B0 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF63D11C4A6518007AF0B0 /* Classes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCourseViewController.swift; sourceTree = "<group>"; };
 		0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCoursesListViewController.swift; path = ../MenuCoursesListViewController.swift; sourceTree = "<group>"; };
+		0BFF63D11C4A6518007AF0B0 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,11 +119,12 @@
 			children = (
 				0B90F4AC1C4A07C900B8C6BD /* SWRevealViewController */,
 				0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */,
+				0BFF63D11C4A6518007AF0B0 /* Classes.swift */,
+				0B90F4B71C4A0B4000B8C6BD /* AddACourseViewController.swift */,
 				0B90F4801C4A073E00B8C6BD /* ViewController.swift */,
 				0B90F4821C4A073E00B8C6BD /* Main.storyboard */,
 				0B7652061C4A3BD50070E4B6 /* EditCourseViewController.swift */,
 				0B7652041C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift */,
-				0B90F4B71C4A0B4000B8C6BD /* AddACourseViewController.swift */,
 				0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */,
 				0B90F4B91C4A0B8A00B8C6BD /* CoursesListViewController.swift */,
 				0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */,
@@ -299,6 +302,7 @@
 				0B90F47F1C4A073E00B8C6BD /* AppDelegate.swift in Sources */,
 				0B7652071C4A3BD50070E4B6 /* EditCourseViewController.swift in Sources */,
 				0B90F4BA1C4A0B8A00B8C6BD /* CoursesListViewController.swift in Sources */,
+				0BFF63D21C4A6518007AF0B0 /* Classes.swift in Sources */,
 				0B90F4B01C4A07E800B8C6BD /* SWRevealViewController.m in Sources */,
 				0B90F4BE1C4A0C8800B8C6BD /* MenuCourseViewController.swift in Sources */,
 				0B90F4BC1C4A0BA600B8C6BD /* CourseViewController.swift in Sources */,

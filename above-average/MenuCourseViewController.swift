@@ -6,11 +6,6 @@
 //  Copyright © 2016 Kyra Drake. All rights reserved.
 //
 
-
-// THIS FILE IS NOT BEING USED
-//
-//
-//
 import UIKit
 
 class MenuCourseViewController: UIViewController {
@@ -24,6 +19,17 @@ class MenuCourseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //TABLE STUFF
+    /*
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    return 3
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+    }*/
     
     
 }

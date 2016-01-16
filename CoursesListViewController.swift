@@ -10,7 +10,8 @@ import UIKit
 
 class CoursesListViewController: UIViewController {
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    @IBOutlet weak var semesterMenuButton: UIBarButtonItem!
     
     @IBOutlet weak var semesterCoursesTable: UITableView!
     
@@ -52,8 +53,8 @@ class CoursesListViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            semesterMenuButton.target = self.revealViewController()
+            semesterMenuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }

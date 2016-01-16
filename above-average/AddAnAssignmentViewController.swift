@@ -12,10 +12,17 @@ class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var assignmentNameTextField: UITextField!
     
-   // @IBOutlet weak var dueDateTextField: UITextField!
-    
     @IBOutlet weak var dueDate: UIDatePicker!
     
+    @IBAction func dateSelected(sender: AnyObject) {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        //var strDate = dateFormatter.stringFromDate(dueDate.date)
+       // self.dateLabel.text = strDate
+        
+        let date1:NSDate = dueDate.date
+    }
+
     @IBOutlet weak var earnedPointsLabel: UILabel!
     
     @IBOutlet weak var totalPointsLabel: UILabel!
