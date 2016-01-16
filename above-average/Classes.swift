@@ -53,14 +53,21 @@ class Course: NSObject {
     // @TODO update assignment categories
     func updateCategories(a:[(b:String, c:Int)]) {
         for element in a {
-            if containscat(assignmentCategories,element){ // check if category already exists
-                assignmentCategories. 
-            }else{ // add category if it does not exist
-                assignmentCategories += [(element.b, element.c, 0.0, [])]
+            if !containscat(assignmentCategories,element.b){ // add category if it does not exist
+                assignmentCategories += [(element.b, element.c, 0.0, [])] 
+            }else{ // check if category already exists
+                for index in 0...assignmentCategories.count-1{
+                    if element.b == assignmentCategories[(index)].category{
+                        assignmentCategories[(index)] = (element.b, element.c, calculateCategoryAvg(assignmentCategories[(index)].incat),assignmentCategories[(index)].incat)
+                    }
+                    if !containscat(a,assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list
+                        assignmentCategories.removeAtIndex((index))
+                    }
+                }
             }
         }
-        for cat in assignmentCategories{
-            if !containscat(a,cat.category){ // delete the category if it doesn't exist in the new list
+        for index in 0...assignmentCategories.count-1{
+            if !containscat(a,assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list
                 
             }
         }
@@ -131,14 +138,10 @@ class Course: NSObject {
 class Grade: NSObject {
     func calculateCategoryAvg(assignments:[Assignment]) -> Double {
         var categorySum:Double = 0
-        var counter:Int = 0
         for a in assignments {
-            if a.category == category {
-                categorySum += a.percentage
-                counter += 1
-            }
+            categorySum += a.percentage
         }
-        return Double(categorySum/Double(counter))
+        return Double(categorySum/Double(assignments.count))
     }
 
     func calculateWeightedTotal(assignmentCategories:[(category:String,weight:Int,avg:Double)]) -> Double {
