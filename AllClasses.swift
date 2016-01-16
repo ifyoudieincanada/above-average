@@ -37,9 +37,10 @@ class Course {
     }
     
     // @TODO add assignment
-    func addAssignment(a:String, b:Bool, c:Date, d:Double, e:Double) {
+    func addAssignment(a:String, b:String, c:Bool, d:NSDate, e:Double, f:Double) {
         //create assignment
-        assignments += [] //or use append?
+        var temp = Assignment(a, b, c, d, e, f)
+        assignments += [temp] //or use append?
     }
     
     // do the categories add up to 100%
@@ -82,12 +83,12 @@ class Assignment {
     var name:String
     var category:String
     var done:Bool
-    var due:Date
+    var due:NSDate
     var pointsEarned:Double
     var pointsPossible:Double
     var percentage:Double
     
-    init(a:String, b:String, c:Bool, d:Date, e:Double, f:Double) {
+    init(a:String, b:String, c:Bool, d:NSDate, e:Double, f:Double) {
         name = a
         category = b
         done = c
