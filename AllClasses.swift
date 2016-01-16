@@ -7,8 +7,10 @@ class Course {
     var overallPercent:Double
 
     init() {
+    
     }
     // @TODO add assignment category
+    
     // @TODO remove assignment category
     
     // do the categories add up to 100%
