@@ -20,5 +20,16 @@ class MenuCourseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //TABLE STUFF
+    /*
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    return 3
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+    }*/
+    
     
 }

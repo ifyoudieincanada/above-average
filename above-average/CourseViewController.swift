@@ -10,9 +10,18 @@ import UIKit
 
 class CourseViewController: UIViewController {
     
+    
+    @IBOutlet weak var courseMenuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if self.revealViewController() != nil {
+            courseMenuButton.target = self.revealViewController()
+            courseMenuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     override func didReceiveMemoryWarning() {
