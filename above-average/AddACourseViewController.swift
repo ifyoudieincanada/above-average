@@ -8,15 +8,11 @@
 
 import UIKit
 
-var courseArray = [Course]()
+var semesterArray = [Semester]()
 
 class AddACourseViewController: UIViewController, UITableViewDelegate {
     
     //GENERAL STUFF
-    
-    var c:Course?
-    var tempCategories = [(category:String,weight:Int,avg:Double)]()
-    var counter = 0
     
     @IBOutlet weak var courseTitleTextField: UITextField!
     
@@ -26,14 +22,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         
         //when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
         
-        c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!)
-        
-        //Cannot assign value of type '[(caategory: String, weight:Int, avg: Double)]' to type '[(category:String, weight: Int, avg: Double, incat:[Assignment])]'
-        c?.assignmentCategories = tempCategories
-        
-        courseArray.append(c!)
-        
-        tempCategories = []     //clear temp array
+        semesterArray[0].addCourse(courseTitleTextField.text!,courseIdentifierTextField.text!)
     }
     
     //ASSIGNMENT CATEGORIES STUFF
