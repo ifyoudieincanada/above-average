@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B7652051C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7652041C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift */; };
+		0B7652071C4A3BD50070E4B6 /* EditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7652061C4A3BD50070E4B6 /* EditCourseViewController.swift */; };
 		0B90F47F1C4A073E00B8C6BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */; };
 		0B90F4811C4A073E00B8C6BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4801C4A073E00B8C6BD /* ViewController.swift */; };
 		0B90F4841C4A073E00B8C6BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B90F4821C4A073E00B8C6BD /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B7652041C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAnAssignmentViewController.swift; sourceTree = "<group>"; };
+		0B7652061C4A3BD50070E4B6 /* EditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCourseViewController.swift; sourceTree = "<group>"; };
 		0B90F47B1C4A073E00B8C6BD /* above-average.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "above-average.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B90F4801C4A073E00B8C6BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */,
 				0B90F4801C4A073E00B8C6BD /* ViewController.swift */,
 				0B90F4821C4A073E00B8C6BD /* Main.storyboard */,
+				0B7652061C4A3BD50070E4B6 /* EditCourseViewController.swift */,
+				0B7652041C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift */,
 				0B90F4B71C4A0B4000B8C6BD /* AddACourseViewController.swift */,
 				0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */,
 				0B90F4B91C4A0B8A00B8C6BD /* CoursesListViewController.swift */,
@@ -288,8 +294,10 @@
 			files = (
 				0B90F4811C4A073E00B8C6BD /* ViewController.swift in Sources */,
 				0B90F4B81C4A0B4000B8C6BD /* AddACourseViewController.swift in Sources */,
+				0B7652051C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift in Sources */,
 				0B90F4C01C4A0CA200B8C6BD /* MenuCoursesListViewController.swift in Sources */,
 				0B90F47F1C4A073E00B8C6BD /* AppDelegate.swift in Sources */,
+				0B7652071C4A3BD50070E4B6 /* EditCourseViewController.swift in Sources */,
 				0B90F4BA1C4A0B8A00B8C6BD /* CoursesListViewController.swift in Sources */,
 				0B90F4B01C4A07E800B8C6BD /* SWRevealViewController.m in Sources */,
 				0B90F4BE1C4A0C8800B8C6BD /* MenuCourseViewController.swift in Sources */,
@@ -523,6 +531,7 @@
 				0B90F4A51C4A073E00B8C6BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B90F4A61C4A073E00B8C6BD /* Build configuration list for PBXNativeTarget "above-averageTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +540,7 @@
 				0B90F4A81C4A073E00B8C6BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B90F4A91C4A073E00B8C6BD /* Build configuration list for PBXNativeTarget "above-averageUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +549,7 @@
 				0B90F4AB1C4A073E00B8C6BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

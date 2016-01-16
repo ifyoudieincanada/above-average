@@ -1,19 +1,14 @@
 //
-//  MenuCourseViewController.swift
+//  EditCourseViewController.swift
 //  above-average
 //
-//  Created by Kyra Drake on 1/15/16.
+//  Created by Kyra Drake on 1/16/16.
 //  Copyright © 2016 Kyra Drake. All rights reserved.
 //
 
-
-// THIS FILE IS NOT BEING USED
-//
-//
-//
 import UIKit
 
-class MenuCourseViewController: UIViewController {
+class EditCourseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +19,4 @@ class MenuCourseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
