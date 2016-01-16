@@ -31,6 +31,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="85q-SK-n2k" kind="show" id="ymL-57-oXP"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wnW-fV-vJT">
                                         <rect key="frame" x="0.0" y="72" width="320" height="44"/>
@@ -47,6 +50,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="K0K-SE-aLY" kind="show" id="9Ys-tU-efQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -822,6 +828,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ymL-57-oXP"/>
         <segue reference="uxM-yl-bY1"/>
         <segue reference="Mvp-12-gvw"/>
     </inferredMetricsTieBreakers>
