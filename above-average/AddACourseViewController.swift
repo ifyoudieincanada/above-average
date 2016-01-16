@@ -16,15 +16,14 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     var tempCategories = [(category:String, weight:Int, avg:Double,incat:[Assignment])] ()
     var c:Course?
     
+    var index = 0
+    
     @IBAction func addCourseButton(sender: AnyObject) { // when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
         c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!,c: tempCategories)
         for _ in tempCategories{
-            semesterArray[0].courses.append(c!)
+            semesterArray[index].courses.append(c!)
         }
-        
-        
         tempCategories = []     //clear temp array
-
     }
     
     //ASSIGNMENT CATEGORIES STUFF

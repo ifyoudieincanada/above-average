@@ -14,6 +14,9 @@ class AddASemesterViewController: UIViewController {
     
     @IBAction func addSemesterButton(sender: AnyObject) {
         
+        let s = Semester(a: semesterNameTextField.text!)
+        semesterArray.append(s)
+        
     }
     
     @IBOutlet weak var semesterNameTextField: UITextField!

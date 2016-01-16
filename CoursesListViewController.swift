@@ -15,11 +15,11 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var semesterCoursesTable: UITableView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return 1
-        return semesterArray[0].courses.count        //return number of courses in the semester
+        return 2
+        //return semesterArray[0].courses.count        //return number of courses in the semester
     }
     
-    var objects: NSMutableArray! = NSMutableArray()
+   // var objects: NSMutableArray! = NSMutableArray()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
@@ -27,7 +27,7 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
         
         cell.accessoryType = .DetailDisclosureButton
         
-        //cell.textLabel?.text = "cell"
+        cell.textLabel?.text = "cell"
         //cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
         //cell.button.tag = indexPath.row
         
@@ -46,6 +46,7 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         //doSomethingWithItem(indexPath.row)
         let index = indexPath.row
+        print(index)
 
     }
     

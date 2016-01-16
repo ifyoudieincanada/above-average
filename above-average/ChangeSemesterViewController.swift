@@ -8,7 +8,28 @@
 
 import UIKit
 
-class ChangeSemesterViewController: UIViewController {
+class ChangeSemesterViewController: UIViewController, UITableViewDelegate {
+    
+    @IBOutlet weak var changeSemesterTable: UITableView!
+    
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return semesterArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        cell.accessoryType = .DetailDisclosureButton
+        cell.textLabel?.text = semesterArray[indexPath.row].term
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        //doSomethingWithItem(indexPath.row)
+        let index = indexPath.row
+        print(index)
+    }
     
     @IBOutlet weak var semesterListPicker: UIPickerView!
     //idk how to use this but its cool
