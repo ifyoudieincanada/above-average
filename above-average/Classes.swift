@@ -14,7 +14,7 @@ class Semester: NSObject {
     var term:String
     var year:Int
     var courses:[Course]
-    
+
     init(a:String, b:Int) {
         term = a
         year = b
@@ -83,6 +83,31 @@ class Course: NSObject {
             return false
         }
     }
+
+    // Converts a catagory triple into a JSON string
+    func categoryToJSON(cat:String, weight:Int, avg:Double) -> String{
+      var lbl = ["name","weight","avg"]
+      var strCat:String = "{ "
+      strCat = strCat + lbl[0] + ":'" + String(name)   + "'" + ","
+      strCat = strCat + lbl[1] + ":'" + String(weight) + "'" + ","
+      strCat = strCat + lbl[2] + ":'" + String(avg)    + "'"
+      strCat = strCat + "}" // Commas will be added between weights by handler
+      return strCat
+    }
+    /*
+    // Converts and groups course elements into JSON compatible string
+    func toJSON() -> String{
+      var strCourse:String = "{ "
+      var dataMemb = ["name","id","categories","assignments","overall"]
+      // Build JSON Strings in Order: course info, categories, asignments
+      strCourse = dataMemb[0] + name +
+      strCourse = dataMemb[1] + identifier +
+      strCourse = dataMemb[2] + name +
+      strCourse = dataMemb[3] + name +
+      strCourse = dataMemb[4] + name +
+
+      return strCourse;
+    }*/
 }
 
 class Grade: NSObject {
