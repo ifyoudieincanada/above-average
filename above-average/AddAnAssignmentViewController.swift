@@ -12,7 +12,9 @@ class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var assignmentNameTextField: UITextField!
     
-    @IBOutlet weak var dueDateTextField: UITextField!
+   // @IBOutlet weak var dueDateTextField: UITextField!
+    
+    @IBOutlet weak var dueDate: UIDatePicker!
     
     @IBOutlet weak var earnedPointsLabel: UILabel!
     

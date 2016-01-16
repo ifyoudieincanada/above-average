@@ -526,11 +526,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="frB-8U-v0g">
-                                <rect key="frame" x="176" y="123" width="124" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="100" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SVK-6b-oZj">
                                 <rect key="frame" x="176" y="280" width="124" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -559,13 +554,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="99d-DG-SDs">
+                                <rect key="frame" x="20" y="150" width="280" height="122"/>
+                                <date key="date" timeIntervalSinceReferenceDate="474634652.01114702">
+                                    <!--2016-01-16 10:57:32 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="assignmentNameTextField" destination="dzm-GH-ymW" id="9tW-8u-zMK"/>
-                        <outlet property="dueDateTextField" destination="frB-8U-v0g" id="2dp-eZ-8yO"/>
+                        <outlet property="dueDate" destination="99d-DG-SDs" id="xhn-IJ-dIY"/>
                         <outlet property="earnedPointsLabel" destination="70R-Hr-bfb" id="al0-Ea-pqa"/>
                         <outlet property="earnedPointsTextField" destination="SVK-6b-oZj" id="gun-Dm-dIN"/>
                         <outlet property="totalPointsLabel" destination="cA8-Qv-k66" id="Bul-1g-bso"/>
@@ -714,6 +715,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fME-zC-tRV"/>
-        <segue reference="BAN-4g-zuz"/>
+        <segue reference="EEs-mc-28b"/>
     </inferredMetricsTieBreakers>
 </document>
