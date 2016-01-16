@@ -203,19 +203,29 @@
                                 <rect key="frame" x="20" y="81" width="280" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7GL-LQ-OrU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7GL-LQ-OrU" customClass="SemesterTableCell" customModule="above_average" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7GL-LQ-OrU" id="nOw-D1-IcW">
                                             <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="em6-BF-UJD">
-                                                    <rect key="frame" x="234" y="7" width="30" height="30"/>
-                                                    <state key="normal" title="Go"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SC1-ws-XYH">
+                                                    <rect key="frame" x="8" y="8" width="155" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lth-F5-LOr">
+                                                    <rect key="frame" x="226" y="7" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="semesterTableCellButton" destination="lth-F5-LOr" id="ffN-1N-jpq"/>
+                                            <outlet property="semesterTableCellLabel" destination="SC1-ws-XYH" id="5wM-bV-Fpa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

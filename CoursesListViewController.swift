@@ -19,14 +19,25 @@ class CoursesListViewController: UIViewController {
         return courseArray.count        //return number of courses in the semester
     }
     
+    var objects: NSMutableArray! = NSMutableArray()
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SemesterTableCell
         
-        //cell.textLabel?.text = "cell"
-        cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
+        cell.titleLabel.text = self.objects.objectAtIndex(indexPath.row) as? String
+        
+        cell.logButton.tag = indexPath.row;
+        cell.logButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
         
         return cell
+    
+        /*
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        //cell.textLabel?.text = "cell"
+        //cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
+        //cell.button.tag = indexPath.row
+        return cell*/
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -43,9 +54,16 @@ class CoursesListViewController: UIViewController {
         
         semesterCoursesTable.reloadData()
     }
-    
 
-    override func viewDidLoad() {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SemesterTableCell
+        
+        cell.titleLabel.text = self.objects.objectAtIndex(indexPath.row) as? String
+        cell.logButton.tag = indexPath.row;
+        cell.logButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
+        return cell
+
+    func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         /*
@@ -56,7 +74,7 @@ class CoursesListViewController: UIViewController {
         }*/
     }
     
-    override func didReceiveMemoryWarning() {
+    func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
