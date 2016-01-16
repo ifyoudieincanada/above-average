@@ -3,7 +3,7 @@ import UIKit
 class Course {
     var name:String
     var identifier:String
-    var assignmentCategories:[(category:String,weight:Int)]
+    var assignmentCategories:[(category:String,weight:Int,avg:Double)]
     var assignments:[Assignment]
     var overallPercent:Double
     
@@ -16,24 +16,30 @@ class Course {
     }
     
     // add assignment category
-    func addCategory(cat:(a:String, b:Int)) {
+    func addCategory(cat:(a:String, b:Int, avg:Double)) {
         // @TODO check if category with that name already exists with for each
         assignmentCategories += [cat] //or use append?
     }
     
-    // @TODO update assignment categories
-    func updateCategory(cats:[(a:String, b:Int)]) {
+    // @TODO add assignment categories on course creation page
+    func addOnCreate(cats:[(a:String, b:Int, avg:Double)]) {
         assignmentCategories += cats //or use append?
     }
     
+    // @TODO update assignment categories 
+    func updateCategories {
+    
+    }
+    
     // @TODO remove assignment category
-    func removeCategory(removeMe:String, assignmentCategories:[(a:String, b:Int)]) {
-        list = list.filter() { $0 !== removeMe }
+    func removeCategory(removeMe:String) {
+        assignmentCategories = assignmentCategories.filter({ $0.category !== removeMe }) 
     }
     
     // @TODO add assignment
-    func addAssignment() {
-        assignments += []
+    func addAssignment(a:String, b:Bool, c:Date, d:Double, e:Double) {
+        //create assignment
+        assignments += [] //or use append?
     }
     
     // do the categories add up to 100%
@@ -51,35 +57,44 @@ class Course {
 }
 
 class Grade {
-    func calculateCategory(category:String, weight:Int, assignments:[Assignment]) -> Double {
-        var categoryTotal:Double = 0
+    func calculateCategoryAvg(category:String, assignments:[Assignment]) -> Double {
+        var categorySum:Double = 0
+        var counter:Int = 0
         for a in assignments {
-            categoryTotal += a.finalGrade * Double(weight/100)
+            if a.category == category {
+                categorySum += a.percentage
+                counter += 1
+            }
         }
-        return categoryTotal
+        return Double(categorySum/counter)
     }
+    
+    func calculateWeightedTotal(assignmentCategories:[(category:String,weight:Int,avg:Double)]) -> Double {
+        var overall:Double = 0
+        for a in assignmentCategories {
+            overall += a.avg * Double(a.weight/100)
+        }
+        return overall
+    }    
 }
 
 class Assignment {
     var name:String
+    var category:String
     var done:Bool
     var due:Date
     var pointsEarned:Double
     var pointsPossible:Double
     var percentage:Double
     
-    init(a:String, b:Bool, c:Date, d:Bool, e:Double, f:Double) {
+    init(a:String, b:String, c:Bool, d:Date, e:Double, f:Double) {
         name = a
-        done = b
-        due = c
+        category = b
+        done = c
+        due = d
         pointsEarned = e
-        if d == true {
-            pointsPossible = f
-            percentage = e/f
-        } else {
-            pointsPossible = 100
-            percentage = e            
-        } 
+        pointsPossible = f
+        percentage = e/f
     }
     
     
