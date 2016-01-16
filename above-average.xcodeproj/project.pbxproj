@@ -23,6 +23,10 @@
 		0B90F4BE1C4A0C8800B8C6BD /* MenuCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */; };
 		0B90F4C01C4A0CA200B8C6BD /* MenuCoursesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */; };
 		0BFF63D21C4A6518007AF0B0 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF63D11C4A6518007AF0B0 /* Classes.swift */; };
+		0BFF64101C4A8BE5007AF0B0 /* ContainerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF640F1C4A8BE5007AF0B0 /* ContainerMainView.swift */; };
+		0BFF64121C4A8BFB007AF0B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF64111C4A8BFB007AF0B0 /* MainView.swift */; };
+		0BFF64141C4A8C36007AF0B0 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF64131C4A8C36007AF0B0 /* SideMenuController.swift */; };
+		0BFF64161C4A9039007AF0B0 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF64151C4A9039007AF0B0 /* common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCourseViewController.swift; sourceTree = "<group>"; };
 		0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCoursesListViewController.swift; path = ../MenuCoursesListViewController.swift; sourceTree = "<group>"; };
 		0BFF63D11C4A6518007AF0B0 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		0BFF640F1C4A8BE5007AF0B0 /* ContainerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerMainView.swift; path = ../ContainerMainView.swift; sourceTree = "<group>"; };
+		0BFF64111C4A8BFB007AF0B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../MainView.swift; sourceTree = "<group>"; };
+		0BFF64131C4A8C36007AF0B0 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		0BFF64151C4A9039007AF0B0 /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,10 @@
 				0B90F4B91C4A0B8A00B8C6BD /* CoursesListViewController.swift */,
 				0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */,
 				0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */,
+				0BFF64131C4A8C36007AF0B0 /* SideMenuController.swift */,
+				0BFF64111C4A8BFB007AF0B0 /* MainView.swift */,
+				0BFF64151C4A9039007AF0B0 /* common.swift */,
+				0BFF640F1C4A8BE5007AF0B0 /* ContainerMainView.swift */,
 				0B90F4851C4A073E00B8C6BD /* Assets.xcassets */,
 				0B90F4871C4A073E00B8C6BD /* LaunchScreen.storyboard */,
 				0B90F48A1C4A073E00B8C6BD /* Info.plist */,
@@ -296,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B90F4811C4A073E00B8C6BD /* ViewController.swift in Sources */,
+				0BFF64121C4A8BFB007AF0B0 /* MainView.swift in Sources */,
 				0B90F4B81C4A0B4000B8C6BD /* AddACourseViewController.swift in Sources */,
 				0B7652051C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift in Sources */,
 				0B90F4C01C4A0CA200B8C6BD /* MenuCoursesListViewController.swift in Sources */,
@@ -304,8 +317,11 @@
 				0B90F4BA1C4A0B8A00B8C6BD /* CoursesListViewController.swift in Sources */,
 				0BFF63D21C4A6518007AF0B0 /* Classes.swift in Sources */,
 				0B90F4B01C4A07E800B8C6BD /* SWRevealViewController.m in Sources */,
+				0BFF64101C4A8BE5007AF0B0 /* ContainerMainView.swift in Sources */,
+				0BFF64141C4A8C36007AF0B0 /* SideMenuController.swift in Sources */,
 				0B90F4BE1C4A0C8800B8C6BD /* MenuCourseViewController.swift in Sources */,
 				0B90F4BC1C4A0BA600B8C6BD /* CourseViewController.swift in Sources */,
+				0BFF64161C4A9039007AF0B0 /* common.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
