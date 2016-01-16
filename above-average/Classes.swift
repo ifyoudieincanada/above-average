@@ -21,6 +21,14 @@ class Semester: NSObject {
         courses = []
     }
     
+    func addCourse(a:String, b:String) {
+        courses += [Course(a,b)]
+    }
+    
+    func removeCourse(removeMe:String) {
+        courses = coursess.filter({ $0.name != removeMe })
+    }
+    
     
 }
 
@@ -60,7 +68,7 @@ class Course: NSObject {
                     if element.b == assignmentCategories[(index)].category{
                         assignmentCategories[(index)] = (element.b, element.c, calculateCategoryAvg(assignmentCategories[(index)].incat),assignmentCategories[(index)].incat)
                     }
-                    if !containscat(a,assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list
+                    if !containscat(a,assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list (might be able to use filter to simplify)
                         assignmentCategories.removeAtIndex((index))
                     }
                 }
