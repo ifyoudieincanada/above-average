@@ -8,6 +8,8 @@
 
 import UIKit
 
+var semesterArray: [Semester] = []
+
 class AddASemesterViewController: UIViewController {
     
     @IBAction func addSemesterButton(sender: AnyObject) {

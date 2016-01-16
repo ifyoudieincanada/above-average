@@ -8,20 +8,12 @@
 
 import UIKit
 
-var semesterArray = [Semester]()
-
 class AddACourseViewController: UIViewController, UITableViewDelegate {
     
     //GENERAL STUFF
-    
     @IBOutlet weak var courseTitleTextField: UITextField!
-    
     @IBOutlet weak var courseIdentifierTextField: UITextField!
-    
-    @IBAction func addCourseButton(sender: AnyObject) {
-        
-        //when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
-        
+    @IBAction func addCourseButton(sender: AnyObject) { // when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
         semesterArray[0].addCourse(courseTitleTextField.text!,courseIdentifierTextField.text!)
     }
     
