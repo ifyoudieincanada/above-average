@@ -28,9 +28,12 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         
         c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!)
         
-        c?.assignmentCategories
+        c?.assignmentCategories = tempCategories
         
         courseArray.append(c!)
+        
+        counter = 0
+        tempCategories = []     //clear temp array
         
         //print(c)
     }
@@ -60,7 +63,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1        //return count of the array of assignment categories
+        return tempCategories.count       //return count of the array of assignment categories
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -68,8 +71,13 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         //how to populate cells... retrieve data from list of assignment categories
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
+        if tempCategories.count == 0 {
+            cell.textLabel?.text = "No Assignment Categories Entered"
+        }
+        else {
+            cell.textLabel?.text = tempCategories[indexPath.row.category] + "  " + tempCategories[indexPath.row.weight]
         //cell.textLabel?.text = toDoList[indexPath.row]
-        
+        }
         return cell
     }
     
@@ -78,15 +86,15 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         
         if editingStyle == UITableViewCellEditingStyle.Delete {     //swipe to the left (delete)
             
-            //toDoList.removeAtIndex(indexPath.row)
+            tempCategories.removeAtIndex(indexPath.row)
             
-            //assignmentCategoriesTable.reloadData()
+            assignmentCategoriesTable.reloadData()
         }
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        //toDoListTable.reloadData()
+        assignmentCategoriesTable.reloadData()
     }
     
     //OTHER STUFF*/
