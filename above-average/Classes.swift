@@ -20,6 +20,8 @@ class Semester: NSObject {
         year = b
         courses = []
     }
+    
+    
 }
 
 class Course: NSObject {
@@ -49,8 +51,12 @@ class Course: NSObject {
     }
 
     // @TODO update assignment categories
-    func updateCategories() {
-
+    func updateCategories(a:String, b:Int) {
+        for cat in assignmentCategories {
+            if a == cat {
+                
+            }
+        }
     }
 
     // @TODO remove assignment category
