@@ -22,22 +22,22 @@ class CoursesListViewController: UIViewController {
     var objects: NSMutableArray! = NSMutableArray()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SemesterTableCell
-        
-        cell.titleLabel.text = self.objects.objectAtIndex(indexPath.row) as? String
-        
-        cell.logButton.tag = indexPath.row;
-        cell.logButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
-        
-        return cell
-    
-        /*
+
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        
+        cell.accessoryType = .DetailDisclosureButton
+        
         //cell.textLabel?.text = "cell"
         //cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
         //cell.button.tag = indexPath.row
-        return cell*/
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        //doSomethingWithItem(indexPath.row)
+        var index = indexPath.row
+
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
