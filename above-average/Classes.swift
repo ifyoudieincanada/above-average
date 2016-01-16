@@ -20,8 +20,8 @@ class Semester: NSObject {
         year = b
         courses = []
     }
-    
-    
+
+
 }
 
 class Course: NSObject {
@@ -54,24 +54,24 @@ class Course: NSObject {
     func updateCategories(a:[(b:String, c:Int)]) {
         for element in a {
             if containscat(assignmentCategories,element){ // check if category already exists
-                assignmentCategories. 
+              //  assignmentCategories.
             }else{ // add category if it does not exist
                 assignmentCategories += [(element.b, element.c, 0.0, [])]
             }
         }
         for cat in assignmentCategories{
             if !containscat(a,cat.category){ // delete the category if it doesn't exist in the new list
-                
+
             }
         }
-        
+
     }
-    
+
     func containscat(a:[(b:String, Int, Double, [Assignment])], check:String) -> Bool {
         for element in a { if a.b == check { return true } }
         return false
     }
-    
+
     func containscat(a:[(b:String, Int)], check:String) -> Bool {
         for element in a { if a.b == check { return true } }
         return false
@@ -112,21 +112,29 @@ class Course: NSObject {
       strCat = strCat + "}" // Commas will be added between weights by handler
       return strCat
     }
-    /*
-    // Converts and groups course elements into JSON compatible string
-    func toJSON() -> String{
+
+    // Converts and groups instance's elements into JSON compatible string
+    func toJSON() -> String {
       var strCourse:String = "{ "
       var dataMemb = ["name","id","categories","assignments","overall"]
-      // Build JSON Strings in Order: course info, categories, asignments
-      strCourse = dataMemb[0] + name +
-      strCourse = dataMemb[1] + identifier +
-      strCourse = dataMemb[2] + name +
-      strCourse = dataMemb[3] + name +
-      strCourse = dataMemb[4] + name +
-
+      // course info
+      strCourse = strCourse + dataMemb[0] + ":'"  + name +            "',"
+      strCourse = strCourse + dataMemb[1] + ":'"  + identifier +      "',"
+      strCourse = strCourse + dataMemb[4] + ":'"  + overallPercent +  "',"
+      //categories
+      strCourse = strCourse + dataMemb[2] + ":["
+      for index in 0...assignmentCategories.count-2{
+        strCourse = strCourse + categoryToJSON(assignmentCategories[index]) + ","
+      }
+      strCourse = strCourse + categoryToJSON(assignmentCategories[assignmentCategories.count-1])
+      //assignments
+      for index in 0...assignments.count-2{
+        strCourse = strCourse + assignments[index].toJSON() + ","
+      }
+      strCourse = strCourse + assignments[assignments.count-1].toJSON()
       return strCourse;
-    }*/
-}
+    } //toJSON end
+} // Course end
 
 class Grade: NSObject {
     func calculateCategoryAvg(assignments:[Assignment]) -> Double {
