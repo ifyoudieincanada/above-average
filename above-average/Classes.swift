@@ -120,5 +120,26 @@ class Assignment {
         percentage = e/f
     }
 
+    // Converts an Assignment class to a small JSON class
+    func toJSON() -> String{
+      var strAssignment:String = "{ "
+      let dateFormatter = NSDateFormatter()
+      dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+      let dueAsString = dateFormatter.stringFromDate(due)
+      // Build JSON String
+      strAssignment = strAssignment + "name:'" + name + "', "
+      strAssignment = strAssignment + "catagory:'" + category + "',"
+      if done {
+        strAssignment += " done:'true',"
+      } else {
+        strAssignment += " done:'false',"
+      }
+      strAssignment = strAssignment +  " due:'" + dueAsString + "',"
+      strAssignment = strAssignment + " earned:'" + String(pointsEarned) + "',"
+      strAssignment = strAssignment + " possible:'" + String(pointsPossible) + "',"
+      strAssignment = strAssignment + " percent:'" + String(percentage) + "'"
+      strAssignment += "}"  // Commas will be added by a handling class
+      return strAssignment;
+    }
 
 }
