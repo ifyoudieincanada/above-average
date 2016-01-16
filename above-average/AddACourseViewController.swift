@@ -28,6 +28,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         
         c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!)
         
+        //Cannot assign value of type '[(caategory: String, weight:Int, avg: Double)]' to type '[(category:String, weight: Int, avg: Double, incat:[Assignment])]'
         c?.assignmentCategories = tempCategories
         
         courseArray.append(c!)
