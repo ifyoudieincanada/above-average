@@ -49,16 +49,15 @@ class Course: NSObject {
 
     // add assignment category
     func addCategory(cat:(a:String, b:Int, avg:Double, incat:[Assignment])) {
-        // @TODO check if category with that name already exists with for each
-        assignmentCategories += [cat] //or use append?
+        assignmentCategories += [cat]
     }
 
-    // @TODO add assignment categories on course creation page (can add multiple)
+    // add assignment categories on course creation page (can add multiple)
     func addOnCreate(cats:[(a:String, b:Int, avg:Double, incat:[Assignment])]) {
-        assignmentCategories += cats //or use append?
+        assignmentCategories += cats
     }
 
-    // @TODO update assignment categories
+    // update assignment categories
     func updateCategories(a:[(b:String, c:Int)]) {
         for element in a {
             if !containscat(assignmentCategories,element.b){ // add category if it does not exist
@@ -92,12 +91,12 @@ class Course: NSObject {
         return false
     }
 
-    // @TODO remove assignment category
+    // remove assignment category
     func removeCategory(removeMe:String) {
         assignmentCategories = assignmentCategories.filter({ $0.category != removeMe })
     }
 
-    // @TODO add assignment
+    // add assignment
     func addAssignment(a:String, b:String, c:Bool, d:NSDate, e:Double, f:Double) {
         //create assignment
         var temp = Assignment(a: a, b: b, c: c, d: d, e: e, f: f)
