@@ -21,12 +21,9 @@ class Semester: NSObject {
         courses = []
     }
 
-    func addCourse(a:String, b:String) {
-        courses += [Course(a,b)]
-    }
-
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
+<<<<<<< Updated upstream
     }
 
     func toJSON(){
@@ -38,6 +35,8 @@ class Semester: NSObject {
         strSemester = strSemester + courses[index].toJSON() + ","
       }
       strSemester = strSemester + courses[courses.count-1].toJSON() + "};"
+=======
+>>>>>>> Stashed changes
     }
 
 }
@@ -49,10 +48,10 @@ class Course: NSObject {
     var assignments:[Assignment]
     var overallPercent:Double
 
-    init(a:String, b:String) {
+    init(a:String, b:String, c:[(category:String,weight:Int,avg:Double,incat:[Assignment])]) {
         name = a
         identifier = b
-        assignmentCategories = []
+        assignmentCategories = c
         assignments = []
         overallPercent = 0.0
     }
@@ -70,32 +69,32 @@ class Course: NSObject {
     // update assignment categories
     func updateCategories(a:[(b:String, c:Int)]) {
         for element in a {
-            if !containscat(assignmentCategories,element.b){ // add category if it does not exist
+            if !containscat(assignmentCategories,check: element.b){ // add category if it does not exist
                 assignmentCategories += [(element.b, element.c, 0.0, [])]
             }else{ // check if category already exists
                 for index in 0...assignmentCategories.count-1{
                     if element.b == assignmentCategories[(index)].category{
                         assignmentCategories[(index)] = (element.b, element.c, calculateCategoryAvg(assignmentCategories[(index)].incat),assignmentCategories[(index)].incat)
                     }
-                    if !containscat(a,assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list (might be able to use filter to simplify)
+                    if !containscata(a,check: assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list (might be able to use filter to simplify)
                         assignmentCategories.removeAtIndex((index))
                     }
                 }
             }
         }
         for index in 0...assignmentCategories.count-1{
-            if !containscat(a,assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list
+            if !containscata(a,check: assignmentCategories[(index)].category){ // delete the category if it doesn't exist in the new list
             }
         }
     }
 
-    func containscat(a:[(b:String, Int, Double, [Assignment])], check:String) -> Bool {
-        for element in a { if a.b == check { return true } }
+    func containscat(a:[(category:String, weight:Int, avg:Double, incat:[Assignment])], check:String) -> Bool {
+        for element in a { if element.category == check { return true } }
         return false
     }
 
-    func containscat(a:[(b:String, Int)], check:String) -> Bool {
-        for element in a { if a.b == check { return true } }
+    func containscata(a:[(b:String, c:Int)], check:String) -> Bool {
+        for element in a { if element.b == check { return true } }
         return false
     }
 
@@ -107,7 +106,7 @@ class Course: NSObject {
     // add assignment
     func addAssignment(a:String, b:String, c:Bool, d:NSDate, e:Double, f:Double) {
         //create assignment
-        var temp = Assignment(a: a, b: b, c: c, d: d, e: e, f: f)
+        let temp = Assignment(a: a, b: b, c: c, d: d, e: e, f: f)
         assignments += [temp] //or use append?
     }
 
@@ -123,9 +122,9 @@ class Course: NSObject {
             return false
         }
     }
-
+/*
     // Converts a catagory triple into a JSON string
-    func categoryToJSON(cat:String, weight:Int, avg:Double) -> String{
+    func categoryToJSON(category:String, weight:Int, avg:Double, incat:[Assignment]) -> String{
       var lbl = ["name","weight","avg"]
       var strCat:String = "{ "
       strCat = strCat + lbl[0] + ":'" + String(name)   + "'" + ","
@@ -142,7 +141,7 @@ class Course: NSObject {
       // course info
       strCourse = strCourse + dataMemb[0] + ":'"  + name +            "',"
       strCourse = strCourse + dataMemb[1] + ":'"  + identifier +      "',"
-      strCourse = strCourse + dataMemb[4] + ":'"  + overallPercent +  "',"
+      strCourse = strCourse + dataMemb[4] + ":'"  + String(overallPercent) +  "',"
       //categories
       strCourse = strCourse + dataMemb[2] + ":["
       for index in 0...assignmentCategories.count-2{
@@ -155,26 +154,25 @@ class Course: NSObject {
       }
       strCourse = strCourse + assignments[assignments.count-1].toJSON()
       return strCourse;
-    } //toJSON end
+    } //toJSON end*/
 } // Course end
 
-class Grade: NSObject {
     func calculateCategoryAvg(assignments:[Assignment]) -> Double {
-        var categorySum:Double = 0
-        for a in assignments {
-            categorySum += a.percentage
-        }
-        return Double(categorySum/Double(assignments.count))
+    var categorySum:Double = 0
+    for a in assignments {
+        categorySum += a.percentage
+    }
+    return Double(categorySum/Double(assignments.count))
     }
 
     func calculateWeightedTotal(assignmentCategories:[(category:String,weight:Int,avg:Double)]) -> Double {
-        var overall:Double = 0
-        for a in assignmentCategories {
-            overall += a.avg * Double(a.weight/100)
-        }
-        return overall
+    var overall:Double = 0
+    for a in assignmentCategories {
+        overall += a.avg * Double(a.weight/100)
     }
-}
+    return overall
+    }
+
 
 class Assignment {
     var name:String

@@ -13,8 +13,18 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     //GENERAL STUFF
     @IBOutlet weak var courseTitleTextField: UITextField!
     @IBOutlet weak var courseIdentifierTextField: UITextField!
+    var tempCategories = [(category:String, weight:Int, avg:Double,incat:[Assignment])] ()
+    var c:Course?
+    
     @IBAction func addCourseButton(sender: AnyObject) { // when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
-        semesterArray[0].addCourse(courseTitleTextField.text!,courseIdentifierTextField.text!)
+        c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!,c: tempCategories)
+        for _ in tempCategories{
+            semesterArray[0].courses.append(c!)
+        }
+        
+        
+        tempCategories = []     //clear temp array
+
     }
     
     //ASSIGNMENT CATEGORIES STUFF
@@ -28,7 +38,7 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         //when this button is pressed, read from the categoryName nad weight text fields and create a new assignment category
         
         let weight:Int = Int(weightTextField.text!)!
-        tempCategories += [(category:categoryNameTextField.text!, weight:weight, avg:Double(weight))]
+        tempCategories += [(category:categoryNameTextField.text!, weight:weight, 0,[])]
         
         print(tempCategories)
         print(tempCategories.count)

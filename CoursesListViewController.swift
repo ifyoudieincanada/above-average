@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoursesListViewController: UIViewController {
+class CoursesListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -16,7 +16,7 @@ class CoursesListViewController: UIViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return 1
-        return courseArray.count        //return number of courses in the semester
+        return semesterArray[0].courses.count        //return number of courses in the semester
     }
     
     var objects: NSMutableArray! = NSMutableArray()
@@ -33,28 +33,7 @@ class CoursesListViewController: UIViewController {
         
         return cell
     }
-    
-    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        //doSomethingWithItem(indexPath.row)
-        var index = indexPath.row
-
-    }
-    
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if editingStyle == UITableViewCellEditingStyle.Delete {     //swipee to the left (delete)
-            
-            courseArray.removeAtIndex(indexPath.row)
-            
-            semesterCoursesTable.reloadData()
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        semesterCoursesTable.reloadData()
-    }
-
+    /*
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SemesterTableCell
         
@@ -62,8 +41,31 @@ class CoursesListViewController: UIViewController {
         cell.logButton.tag = indexPath.row;
         cell.logButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
         return cell
+    }*/
+    
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+        //doSomethingWithItem(indexPath.row)
+        let index = indexPath.row
 
-    func viewDidLoad() {
+    }
+    
+   /* func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete {     //swipee to the left (delete)
+            
+            semesterArray[0].courses.removeAtIndex(indexPath.row)
+            
+            semesterCoursesTable.reloadData()
+        }
+    }*/
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        semesterCoursesTable.reloadData()
+    }
+
+
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         /*
@@ -74,7 +76,7 @@ class CoursesListViewController: UIViewController {
         }*/
     }
     
-    func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
