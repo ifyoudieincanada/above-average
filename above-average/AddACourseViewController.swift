@@ -8,12 +8,15 @@
 
 import UIKit
 
+var courseArray = [Course]()
 
 class AddACourseViewController: UIViewController, UITableViewDelegate {
     
     //GENERAL STUFF
     
     var c:Course?
+    var tempCategories = [(category:String,weight:Int,avg:Double)]()
+    var counter = 0
     
     @IBOutlet weak var courseTitleTextField: UITextField!
     
@@ -25,7 +28,11 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         
         c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!)
         
-        print(c)
+        c?.assignmentCategories
+        
+        courseArray.append(c!)
+        
+        //print(c)
     }
     
     //ASSIGNMENT CATEGORIES STUFF
@@ -40,7 +47,9 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
         
         let weight:Int = Int(weightTextField.text!)!
         
-        c?.addCategory((a:categoryNameTextField.text!, b:weight, avg:Double(weight)))
+        tempCategories[counter] = (category:categoryNameTextField.text!, weight:weight, avg:Double(weight))
+        //c?.addCategory((a:categoryNameTextField.text!, b:weight, avg:Double(weight)))
+        counter++
     }
     
     //ASSIGNMENT CATEGORIES TABLE STUFF
