@@ -86,15 +86,26 @@ class Course: NSObject, NSCoding {
     /*
     // Persistant data writer
     func encodeWithCoder(aCoder: NSCoder){
-      aCoder.encodeObject(self.name, forKey: EncoderKeys.nameKey)
+      aCoder.encodeObject(self.name, forKey: EncoderKeys.cNameKey)
+      aCoder.encodeObject(self.identifier, forKey: EncoderKeys.cIdentifierKey)
+      aCoder.encodeObject(self.assignmentCategories, forKey: EncoderKeys.cAssignmentCategoriesKey)
+      aCoder.encodeObject(self.assignments, forKey: EncoderKeys.cAssignmentsKey)
+      aCoder.encodeDouble(self.overallPercent, forKey: EncoderKeys.cOverallPercentKey)
     }
 
     // Persistant data reader
     required convenience init?(coder aDecoder: NSCoder) {
       // Decode to NSObject and "downcast" to correct type if needed
-      let name = aDecoder.decodeObjectForKey(EncoderKeys.nameKey) as! String
+      let name = aDecoder.decodeObjectForKey(EncoderKeys.cNameKey) as! String
+      let identifier = aDecoder.decodeObjectForKey(EncoderKeys.cIdentifierKey) as! String
+      let assignmentCategories = aDecoder.decodeObjectForKey(EncoderKeys.cAssignmentCategoriesKey) as! [(category:String,weight:Int,avg:Double,incat:[Assignment])]
+      let assignmentsD = aDecoder.decodeObjectForKey(EncoderKeys.cAssignmentsKey) as! [Assignment]
+      let overallPercentD = aDecoder.decodeObjectForKey(EncoderKeys.cOverallPercentKey) as! Double
       // Call default init and pass decoded values as arguments
-      self.init(name,category,done,due,pointsEarned,pointsPossible,percentage)
+      self.init(a:name,b:identifier,c:assignmentCategories)
+      // These don't have init arguments; D for decode
+      self.assignments = assignmentsD
+      self.overallPercent = overallPercentD
     }
     */
     // add assignment category
