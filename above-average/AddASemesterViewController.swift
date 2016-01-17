@@ -15,10 +15,7 @@ class AddASemesterViewController: UIViewController {
         semesterArray.append(s)
         
         
-        
-        
-        
-       // NSUserDefaults.standardUserDefaults().setObject(semesterArray, forKey: "semesterArray")
+        //NSUserDefaults.standardUserDefaults().setObject(semesterArray, forKey: "semesterArray")
         
         
         

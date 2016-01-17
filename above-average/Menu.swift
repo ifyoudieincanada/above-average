@@ -27,10 +27,10 @@ class Menu: UIViewController {
         
         
         
-        /*
+        
         if (NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") != nil) {
             semesterArray = NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") as! [Semester]
-        }*/
+        }
         
         
         
