@@ -147,7 +147,8 @@ class Course: NSObject {
         }
 
         //@TODO: ambiguous reference to member 'count'
-        strCourse = strCourse + categoryToJSON(assignmentCategories[assignmentCategories.count-1])
+        var Cat = assignmentCategories[assignmentCategories.count-1]
+        strCourse = strCourse + categoryToJSON(Cat.category,weight: Cat.weight,avg: Cat.avg,incat: Cat.incat)
         //assignments
         var AssignArrLast = assignments.count-1;
         for j in 0..<AssignArrLast {
