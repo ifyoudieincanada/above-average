@@ -15,6 +15,8 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var semesterCoursesTable: UITableView!
     
+    @IBOutlet weak var semesterNameLabel: UILabel!
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        if semesterArray.count == 0 {
             return 0
@@ -35,6 +37,8 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         print(index)
+        courseIndex = index
+        performSegueWithIdentifier("goToCourse", sender: self)
     }
     
     /*
@@ -53,6 +57,8 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
 
     override func viewDidAppear(animated: Bool) {
         semesterCoursesTable.reloadData()
+        
+        //semesterNameLabel.text = semesterArray[semesterArrayIndex].term
     }
 
 

@@ -19,13 +19,23 @@ class CourseViewController: UIViewController {
     
     @IBOutlet weak var courseAverageLabel: UILabel!
     
-    @IBOutlet weak var courseCategoriesTable: UITableView!
-    
     @IBOutlet weak var courseAssignmentsTable: UITableView!
     
-   override func viewDidLoad() {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1;
+    }
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        courseIdentifierLabel.text = semesterArray[semesterArrayIndex].courses[courseIndex].identifier
+        
+        courseNameLabel.text = semesterArray[semesterArrayIndex].courses[courseIndex].name
+        
+        courseAverageLabel.text = String(semesterArray[semesterArrayIndex].courses[courseIndex].overallPercent)
         
         if self.revealViewController() != nil {
             courseMenuButton.target = self.revealViewController()

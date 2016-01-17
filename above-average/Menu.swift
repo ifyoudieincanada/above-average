@@ -10,9 +10,9 @@ import UIKit
 
 var semesterArray = [Semester]()
 var semesterArrayIndex = 0
+var courseIndex = 0
 
 class Menu: UIViewController {
-
     
     @IBAction func ClassSelectionButton(sender: AnyObject) {
         
@@ -22,9 +22,9 @@ class Menu: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if (NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") != nil) {
+        /*if (NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") != nil) {
             semesterArray = NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") as! [Semester]
-        }
+        }*/
     }
     
     override func didReceiveMemoryWarning() {

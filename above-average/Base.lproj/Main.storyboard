@@ -302,6 +302,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lth-F5-LOr">
                                                     <rect key="frame" x="226" y="7" width="46" height="30"/>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <segue destination="mKD-v0-kTG" kind="show" identifier="goToCourse" id="eob-Po-OTd"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -319,7 +322,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-kV-AMT">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Semester" id="6eC-1k-uac">
+                                    <navigationItem id="6eC-1k-uac">
                                         <barButtonItem key="leftBarButtonItem" title="Menu" id="iue-gC-ops">
                                             <connections>
                                                 <segue destination="xtr-6z-RrI" kind="show" id="f7g-M7-fKI"/>
@@ -333,12 +336,19 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Semester" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Xq-FB-XhP">
+                                <rect key="frame" x="66" y="20" width="209" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="semesterCoursesTable" destination="tCw-TV-hqY" id="Gmv-5k-bp0"/>
+                        <outlet property="semesterNameLabel" destination="7Xq-FB-XhP" id="dJB-zz-sP3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70c-Fw-N3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -898,17 +908,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-G6-9bQ">
-                                <rect key="frame" x="20" y="216" width="280" height="352"/>
+                                <rect key="frame" x="20" y="141" width="280" height="419"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CZD-OF-rvB">
+                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CZD-OF-rvB" id="UWz-lO-Cyg">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mKD-v0-kTG" id="nlI-qL-Ytc"/>
+                                    <outlet property="delegate" destination="mKD-v0-kTG" id="VJ3-Uo-fxm"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-Z9-7Ce">
                                 <rect key="frame" x="94" y="20" width="132" height="46"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quD-Fo-TGm">
-                                <rect key="frame" x="20" y="129" width="280" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -927,13 +945,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ot-c6-Jsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="1924"/>
+            <point key="canvasLocation" x="911" y="1506"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mvp-12-gvw"/>
-        <segue reference="O8n-Tb-klC"/>
-        <segue reference="f7g-M7-fKI"/>
+        <segue reference="eob-Po-OTd"/>
         <segue reference="A8Z-1E-N4u"/>
+        <segue reference="f7g-M7-fKI"/>
+        <segue reference="O8n-Tb-klC"/>
     </inferredMetricsTieBreakers>
 </document>

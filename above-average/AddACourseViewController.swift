@@ -20,10 +20,12 @@ class AddACourseViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func addCourseButton(sender: AnyObject) { // when the button is pressed, read from the courseTitle and courseIdentifier text fields and create a course
         c = Course(a: courseTitleTextField.text!, b: courseIdentifierTextField.text!,c: tempCategories)
-        for _ in tempCategories{
+        //for _ in tempCategories{
             semesterArray[index].courses.append(c!)
-        }
+        //}
         tempCategories = []     //clear temp array
+        
+       // print(tempCategories)
     }
     
     //ASSIGNMENT CATEGORIES STUFF
