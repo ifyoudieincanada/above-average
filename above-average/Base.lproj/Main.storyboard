@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -256,11 +257,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Semester" id="6eC-1k-uac">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hBg-Ja-7Ud">
-                                            <connections>
-                                                <segue destination="85q-SK-n2k" kind="showDetail" id="jFM-m7-TdB"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Menu" id="iue-gC-ops"/>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Haj-QF-vsg">
                                             <connections>
                                                 <segue destination="o4m-gy-yjH" kind="show" id="bcZ-jm-dnF"/>
@@ -758,7 +755,10 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem id="dpz-cY-laq">
-                                        <barButtonItem key="leftBarButtonItem" id="77c-jo-RCn"/>
+                                        <leftBarButtonItems>
+                                            <barButtonItem id="77c-jo-RCn"/>
+                                            <barButtonItem title="Item" id="67y-hj-35F"/>
+                                        </leftBarButtonItems>
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Qcy-UE-ud3">
                                             <connections>
                                                 <segue destination="C8N-tf-lel" kind="show" id="PgK-Kt-J85"/>
@@ -767,54 +767,49 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Identifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v1-c9-hBx">
-                                <rect key="frame" x="97" y="74" width="127" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8v1-c9-hBx">
+                                <rect key="frame" x="20" y="74" width="280" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uXR-rd-ZgJ">
-                                <rect key="frame" x="20" y="141" width="280" height="54"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="sBa-Ct-TiS">
-                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBa-Ct-TiS" id="0PF-eH-U6w">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99.01%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3g-2C-4XK">
                                 <rect key="frame" x="122" y="101" width="77" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMI-Tq-ZRg">
-                                <rect key="frame" x="270" y="178" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <segue destination="jig-hy-7bA" kind="show" id="Z0a-pG-QHI"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-G6-9bQ">
                                 <rect key="frame" x="20" y="216" width="280" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Id" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-Z9-7Ce">
+                                <rect key="frame" x="94" y="20" width="132" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quD-Fo-TGm">
+                                <rect key="frame" x="20" y="129" width="280" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="courseAssignmentsTable" destination="oNl-G6-9bQ" id="elE-fi-P5m"/>
+                        <outlet property="courseAverageLabel" destination="L3g-2C-4XK" id="zgw-m4-011"/>
+                        <outlet property="courseIdentifierLabel" destination="Br3-Z9-7Ce" id="jUZ-Qz-P9S"/>
                         <outlet property="courseMenuButton" destination="77c-jo-RCn" id="oF9-wW-GKP"/>
+                        <outlet property="courseNameLabel" destination="8v1-c9-hBx" id="MAD-WO-8Ko"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ot-c6-Jsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="1974"/>
+            <point key="canvasLocation" x="909" y="1924"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="DYf-se-NBN">
@@ -869,7 +864,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uxM-yl-bY1"/>
-        <segue reference="jFM-m7-TdB"/>
+        <segue reference="ymL-57-oXP"/>
         <segue reference="Mvp-12-gvw"/>
     </inferredMetricsTieBreakers>
 </document>

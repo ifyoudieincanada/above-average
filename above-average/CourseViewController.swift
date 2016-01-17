@@ -13,7 +13,17 @@ class CourseViewController: UIViewController {
     
     @IBOutlet weak var courseMenuButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
+    @IBOutlet weak var courseIdentifierLabel: UILabel!
+    
+    @IBOutlet weak var courseNameLabel: UILabel!
+    
+    @IBOutlet weak var courseAverageLabel: UILabel!
+    
+    @IBOutlet weak var courseCategoriesTable: UITableView!
+    
+    @IBOutlet weak var courseAssignmentsTable: UITableView!
+    
+   override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         

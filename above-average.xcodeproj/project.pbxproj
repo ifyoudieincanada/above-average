@@ -133,12 +133,12 @@
 			children = (
 				0B90F4AC1C4A07C900B8C6BD /* SWRevealViewController */,
 				0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */,
+				0B90F4801C4A073E00B8C6BD /* ViewController.swift */,
 				0BFF63D11C4A6518007AF0B0 /* Classes.swift */,
 				0B90F4B71C4A0B4000B8C6BD /* AddACourseViewController.swift */,
 				0B7652061C4A3BD50070E4B6 /* EditCourseViewController.swift */,
 				0B7652041C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift */,
 				0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */,
-				0B90F4801C4A073E00B8C6BD /* ViewController.swift */,
 				0B90F4B91C4A0B8A00B8C6BD /* CoursesListViewController.swift */,
 				0B3442651C4AC5DF00AAC7C7 /* AddASemesterViewController.swift */,
 				0B3442631C4AC51E00AAC7C7 /* ChangeSemesterViewController.swift */,
