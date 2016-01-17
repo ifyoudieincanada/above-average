@@ -14,7 +14,12 @@ import UIKit
 // Info: https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
 struct EncoderKeys {
   static let selfKey = "semester"
-
+  // Course Encode/Decode Keys
+static let cNameKey = "cNameKey"
+static let cIdentifierKey = "cIdentifierKey"
+static let cAssignmentCategoriesKey = "cAssignmentCategoriesKey"
+static let cAssignmentsKey = "cAssignmentsKey"
+static let cOverallPercentKey = "cOverallPercentKey"
   // Assignment Encode/Decode Keys
 static let nameKey = "nameKeyStr"
 static let categoryKey = "categoryKeyStr"
@@ -33,7 +38,7 @@ class Semester:NSObject {
         term = a
         courses = []
     }
-    
+
     /*
     // Persistant data writer
     func encodeWithCoder(aCoder: NSCoder){
@@ -45,7 +50,7 @@ class Semester:NSObject {
       let self = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! NSObject
     }
     */
-    
+
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
 
@@ -64,7 +69,7 @@ class Semester:NSObject {
 
 }
 
-class Course: NSObject {
+class Course: NSObject, NSCoding {
     var name:String
     var identifier:String
     var assignmentCategories:[(category:String,weight:Int,avg:Double,incat:[Assignment])]
@@ -78,7 +83,20 @@ class Course: NSObject {
         assignments = []
         overallPercent = 0.0
     }
+    /*
+    // Persistant data writer
+    func encodeWithCoder(aCoder: NSCoder){
+      aCoder.encodeObject(self.name, forKey: EncoderKeys.nameKey)
+    }
 
+    // Persistant data reader
+    required convenience init?(coder aDecoder: NSCoder) {
+      // Decode to NSObject and "downcast" to correct type if needed
+      let name = aDecoder.decodeObjectForKey(EncoderKeys.nameKey) as! String
+      // Call default init and pass decoded values as arguments
+      self.init(name,category,done,due,pointsEarned,pointsPossible,percentage)
+    }
+    */
     // add assignment category
     func addCategory(cat:(a:String, b:Int, avg:Double, incat:[Assignment])) {
         assignmentCategories += [cat]
