@@ -13,16 +13,24 @@ import UIKit
 // Stores constant encoder valus
 // Info: https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
 struct EncoderKeys {
-  static let selfKey = "semester"
+  //Semester Encode/Decode Keys
+  static let term = "termKey"
+  static let courses = "coursesKey"
 
+  // Course Encode/Decode Keys
+  static let cNameKey = "cNameKey"
+  static let cIdentifierKey = "cIdentifierKey"
+  static let cAssignmentCategoriesKey = "cAssignmentCategoriesKey"
+  static let cAssignmentsKey = "cAssignmentsKey"
+  static let cOverallPercentKey = "cOverallPercentKey"
   // Assignment Encode/Decode Keys
-static let nameKey = "nameKeyStr"
-static let categoryKey = "categoryKeyStr"
-static let doneKey = "doneKeyStr"
-static let dueKey = "dueKeyStr"
-static let pointsEarnedKey = "pointsEarnedKeyStr"
-static let pointsPossibleKey = "pointsPossibleKeyStr"
-static let percentageKey = "percentageKeyStr"
+  static let nameKey = "nameKeyStr"
+  static let categoryKey = "categoryKeyStr"
+  static let doneKey = "doneKeyStr"
+  static let dueKey = "dueKeyStr"
+  static let pointsEarnedKey = "pointsEarnedKeyStr"
+  static let pointsPossibleKey = "pointsPossibleKeyStr"
+  static let percentageKey = "percentageKeyStr"
 }
 
 class Semester:NSObject {
@@ -33,8 +41,7 @@ class Semester:NSObject {
         term = a
         courses = []
     }
-    
-    
+
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
 
@@ -53,7 +60,7 @@ class Semester:NSObject {
 
 }
 
-class Course: NSObject {
+class Course: NSObject, NSCoding {
     var name:String
     var identifier:String
     var assignmentCategories:[(category:String,weight:Int,avg:Double,incat:[Assignment])]
@@ -67,7 +74,31 @@ class Course: NSObject {
         assignments = []
         overallPercent = 0.0
     }
+    /*
+    // Persistant data writer
+    func encodeWithCoder(aCoder: NSCoder){
+      aCoder.encodeObject(self.name, forKey: EncoderKeys.cNameKey)
+      aCoder.encodeObject(self.identifier, forKey: EncoderKeys.cIdentifierKey)
+      aCoder.encodeObject(self.assignmentCategories, forKey: EncoderKeys.cAssignmentCategoriesKey)
+      aCoder.encodeObject(self.assignments, forKey: EncoderKeys.cAssignmentsKey)
+      aCoder.encodeDouble(self.overallPercent, forKey: EncoderKeys.cOverallPercentKey)
+    }
 
+    // Persistant data reader
+    required convenience init?(coder aDecoder: NSCoder) {
+      // Decode to NSObject and "downcast" to correct type if needed
+      let name = aDecoder.decodeObjectForKey(EncoderKeys.cNameKey) as! String
+      let identifier = aDecoder.decodeObjectForKey(EncoderKeys.cIdentifierKey) as! String
+      let assignmentCategories = aDecoder.decodeObjectForKey(EncoderKeys.cAssignmentCategoriesKey) as! [(category:String,weight:Int,avg:Double,incat:[Assignment])]
+      let assignmentsD = aDecoder.decodeObjectForKey(EncoderKeys.cAssignmentsKey) as! [Assignment]
+      let overallPercentD = aDecoder.decodeObjectForKey(EncoderKeys.cOverallPercentKey) as! Double
+      // Call default init and pass decoded values as arguments
+      self.init(a:name,b:identifier,c:assignmentCategories)
+      // These don't have init arguments; D for decode
+      self.assignments = assignmentsD
+      self.overallPercent = overallPercentD
+    }
+    */
     // add assignment category
     func addCategory(cat:(a:String, b:Int, avg:Double, incat:[Assignment])) {
         assignmentCategories += [cat]
