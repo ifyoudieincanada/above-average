@@ -14,8 +14,8 @@ import UIKit
 // Info: https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
 struct EncoderKeys {
   //Semester Encode/Decode Keys
-  static let term = "termKey"
-  static let courses = "coursesKey"
+  static let termKey = "termKey"
+  static let coursesKey = "coursesKey"
   // Course Encode/Decode Keys
   static let cNameKey = "cNameKey"
   static let cIdentifierKey = "cIdentifierKey"
@@ -41,7 +41,7 @@ class Semester:NSObject, NSCoding {
         courses = []
     }
 
-    /*
+    
     // Persistant data writer
     func encodeWithCoder(aCoder: NSCoder){
       aCoder.encodeObject(self.term, forKey: EncoderKeys.termKey)
@@ -50,12 +50,12 @@ class Semester:NSObject, NSCoding {
 
     // Persistant data reader
     required convenience init?(coder aDecoder: NSCoder) {
-      let term = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! String
-      let coursesD = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! [Course]
+      let term = aDecoder.decodeObjectForKey(EncoderKeys.termKey) as! String
+      let coursesD = aDecoder.decodeObjectForKey(EncoderKeys.coursesKey) as! [Course]
       self.init(a:term)
       courses = coursesD
     }
-    */
+
 
 
     func removeCourse(removeMe:String) {
@@ -76,7 +76,7 @@ class Semester:NSObject, NSCoding {
 
 }
 
-class Course: NSObject, NSCoding {
+class Course: NSObject {
     var name:String
     var identifier:String
     var assignmentCategories:[(category:String,weight:Int,avg:Double,incat:[Assignment])]
