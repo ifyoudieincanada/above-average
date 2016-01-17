@@ -13,7 +13,10 @@ import UIKit
 // Stores constant encoder valus
 // Info: https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
 struct EncoderKeys {
-  static let selfKey = "semester"
+  //Semester Encode/Decode Keys
+  static let term = "termKey"
+  static let courses = "coursesKey"
+
   // Course Encode/Decode Keys
 static let cNameKey = "cNameKey"
 static let cIdentifierKey = "cIdentifierKey"
