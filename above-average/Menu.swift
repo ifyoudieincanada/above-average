@@ -22,9 +22,24 @@ class Menu: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        
+        
+        
+        
+        /*
         if (NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") != nil) {
             semesterArray = NSUserDefaults.standardUserDefaults().objectForKey("semesterArray") as! [Semester]
-        }
+        }*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

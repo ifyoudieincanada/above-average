@@ -10,6 +10,8 @@ import UIKit
 
 class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
     
+    var date = NSDate ()
+    
     @IBOutlet weak var assignmentNameTextField: UITextField!
     
     @IBOutlet weak var dueDate: UIDatePicker!
@@ -20,7 +22,7 @@ class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
         //var strDate = dateFormatter.stringFromDate(dueDate.date)
        // self.dateLabel.text = strDate
         
-        let date1:NSDate = dueDate.date
+        date = dueDate.date
     }
 
     
@@ -29,20 +31,34 @@ class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var totalPointsTextField: UITextField!
     
     
+    @IBAction func addAssignmentButton(sender: AnyObject) {
+        
+        let a = Assignment(a: assignmentNameTextField.text!, b: String(categoryPicker), c: true, d: date, e: Double(earnedPointsTextField.text!)!, f: Double(totalPointsTextField.text!)!)
+        //a.name = assignmentNameTextField.text
+        
+        //semesterArray[semesterArrayIndex].courses[courseIndex].assignments.append(a)
+        semesterArray[semesterArrayIndex].courses[courseIndex].addAssignment(assignmentNameTextField.text!, b: String(categoryPicker), c: true, d: date, e: Double(earnedPointsTextField.text!)!, f: Double(totalPointsTextField.text!)!)
+    }
+    
+    //PICKER
     
     @IBOutlet weak var categoryPicker: UIPickerView!
     
-    @IBAction func addAssignmentButton(sender: AnyObject) {
-        
-    }
+    var pickerData: [String] = [String]()
     
-    
-    
+
     // OTHER STUFF
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //populate picker
+        for x in semesterArray[semesterArrayIndex].courses[courseIndex].assignmentCategories
+        {
+            pickerData.append(x.category)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,3 +67,11 @@ class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
     }
 
 }
+
+
+
+
+
+
+
+

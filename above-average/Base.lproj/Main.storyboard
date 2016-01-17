@@ -937,6 +937,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLk-71-eKs">
+                                <rect key="frame" x="254" y="119" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <segue destination="jig-hy-7bA" kind="show" id="43K-AV-saD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -955,9 +962,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A8Z-1E-N4u"/>
-        <segue reference="f7g-M7-fKI"/>
         <segue reference="O8n-Tb-klC"/>
-        <segue reference="Mvp-12-gvw"/>
+        <segue reference="f7g-M7-fKI"/>
+        <segue reference="A8Z-1E-N4u"/>
+        <segue reference="M2g-gx-Gb6"/>
     </inferredMetricsTieBreakers>
 </document>
