@@ -16,7 +16,6 @@ struct EncoderKeys {
   //Semester Encode/Decode Keys
   static let term = "termKey"
   static let courses = "coursesKey"
-
   // Course Encode/Decode Keys
   static let cNameKey = "cNameKey"
   static let cIdentifierKey = "cIdentifierKey"
@@ -33,7 +32,7 @@ struct EncoderKeys {
   static let percentageKey = "percentageKeyStr"
 }
 
-class Semester:NSObject {
+class Semester:NSObject, NSCoding {
     var term:String
     var courses:[Course]
 
@@ -41,16 +40,19 @@ class Semester:NSObject {
         term = a
         courses = []
     }
-
     /*
     // Persistant data writer
     func encodeWithCoder(aCoder: NSCoder){
-      aCoder.encodeObject(self, forKey: EncoderKeys.selfKey)
+      aCoder.encodeObject(self.term, forKey: EncoderKeys.termKey)
+      aCoder.encodeObject(self.courses, forKey: EncoderKeys.coursesKey)
     }
 
     // Persistant data reader
     required convenience init?(coder aDecoder: NSCoder) {
-      let self = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! NSObject
+      let term = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! String
+      let coursesD = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! [Course]
+      self.init(a:term)
+      courses = coursesD
     }
     */
 
