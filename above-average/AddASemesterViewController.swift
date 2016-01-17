@@ -13,7 +13,7 @@ class AddASemesterViewController: UIViewController {
     @IBAction func addSemesterButton(sender: AnyObject) {
         let s = Semester(a: semesterNameTextField.text!)
         semesterArray.append(s)
-        //NSUserDefaults.standardUserDefaults().setObject(semesterArray, forKey: "semesterArray")
+        NSUserDefaults.standardUserDefaults().setObject(semesterArray, forKey: "semesterArray")
     }
     
     @IBOutlet weak var semesterNameTextField: UITextField!

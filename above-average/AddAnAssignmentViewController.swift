@@ -23,13 +23,20 @@ class AddAnAssignmentViewController: UIViewController, UITextFieldDelegate {
         let date1:NSDate = dueDate.date
     }
 
-    @IBOutlet weak var earnedPointsLabel: UILabel!
-    
-    @IBOutlet weak var totalPointsLabel: UILabel!
     
     @IBOutlet weak var earnedPointsTextField: UITextField!
     
     @IBOutlet weak var totalPointsTextField: UITextField!
+    
+    
+    
+    @IBOutlet weak var categoryPicker: UIPickerView!
+    
+    @IBAction func addAssignmentButton(sender: AnyObject) {
+        
+    }
+    
+    
     
     // OTHER STUFF
     

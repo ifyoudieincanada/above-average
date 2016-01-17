@@ -34,17 +34,6 @@ class Semester:NSObject {
         courses = []
     }
     
-    /*
-    // Persistant data writer
-    func encodeWithCoder(aCoder: NSCoder){
-      aCoder.encodeObject(self, forKey: EncoderKeys.selfKey)
-    }
-
-    // Persistant data reader
-    required convenience init?(coder aDecoder: NSCoder) {
-      let self = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! NSObject
-    }
-    */
     
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
@@ -223,7 +212,7 @@ class Assignment:NSObject, NSCoding  {
         pointsPossible = f
         percentage = e/f
     }
-    /*
+    
     // Persistant data writer
     func encodeWithCoder(aCoder: NSCoder){
       aCoder.encodeObject(self.name, forKey: EncoderKeys.nameKey)
@@ -240,15 +229,14 @@ class Assignment:NSObject, NSCoding  {
       // Decode to NSObject and "downcast" to correct type if needed
       let name = aDecoder.decodeObjectForKey(EncoderKeys.nameKey) as! String
       let category = aDecoder.decodeObjectForKey(EncoderKeys.categoryKey) as! String
-      let done = aDecoder.decodeObjectForKey(EncoderKeys.doneKey)
+      let done = aDecoder.decodeObjectForKey(EncoderKeys.doneKey) as! Bool
       let due = aDecoder.decodeObjectForKey(EncoderKeys.dueKey) as! NSDate
-      let pointsEarned = aDecoder.decodeObjectForKey(EncoderKeys.pointsEarnedKey)
-      let pointsPossible = aDecoder.decodeObjectForKey(EncoderKeys.pointsPossibleKey)
-      let percentage = aDecoder.decodeObjectForKey(EncoderKeys.percentageKey)
+      let pointsEarned = aDecoder.decodeObjectForKey(EncoderKeys.pointsEarnedKey) as! Double
+      let pointsPossible = aDecoder.decodeObjectForKey(EncoderKeys.pointsPossibleKey) as! Double
       // Call default init and pass decoded values as arguments
-      self.init(name,category,done,due,pointsEarned,pointsPossible,percentage)
+      self.init(a: name,b: category,c: done,d: due,e: pointsEarned,f: pointsPossible)
     }
-    */
+    
     // Converts an Assignment class to a small JSON class
     func toJSON() -> String{
       var strAssignment:String = "{ "
