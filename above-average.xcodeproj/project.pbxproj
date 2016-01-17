@@ -25,6 +25,7 @@
 		0B90F4BC1C4A0BA600B8C6BD /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */; };
 		0B90F4BE1C4A0C8800B8C6BD /* MenuCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */; };
 		0B90F4C01C4A0CA200B8C6BD /* MenuCoursesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */; };
+		0BE50B251C4B595B00381A75 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE50B241C4B595B00381A75 /* Menu.swift */; };
 		0BFF63D21C4A6518007AF0B0 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF63D11C4A6518007AF0B0 /* Classes.swift */; };
 		0BFF64101C4A8BE5007AF0B0 /* ContainerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF640F1C4A8BE5007AF0B0 /* ContainerMainView.swift */; };
 		0BFF64121C4A8BFB007AF0B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFF64111C4A8BFB007AF0B0 /* MainView.swift */; };
@@ -76,6 +77,7 @@
 		0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCourseViewController.swift; sourceTree = "<group>"; };
 		0B90F4BF1C4A0CA200B8C6BD /* MenuCoursesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCoursesListViewController.swift; path = ../MenuCoursesListViewController.swift; sourceTree = "<group>"; };
+		0BE50B241C4B595B00381A75 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		0BFF63D11C4A6518007AF0B0 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		0BFF640F1C4A8BE5007AF0B0 /* ContainerMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerMainView.swift; path = ../ContainerMainView.swift; sourceTree = "<group>"; };
 		0BFF64111C4A8BFB007AF0B0 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../MainView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				0B90F4BB1C4A0BA600B8C6BD /* CourseViewController.swift */,
 				0B90F4B91C4A0B8A00B8C6BD /* CoursesListViewController.swift */,
 				0B3442651C4AC5DF00AAC7C7 /* AddASemesterViewController.swift */,
+				0BE50B241C4B595B00381A75 /* Menu.swift */,
 				0B3442631C4AC51E00AAC7C7 /* ChangeSemesterViewController.swift */,
 				0B90F4821C4A073E00B8C6BD /* Main.storyboard */,
 				0B3442691C4AD16900AAC7C7 /* SemesterTableCell.swift */,
@@ -327,6 +330,7 @@
 				0B7652071C4A3BD50070E4B6 /* EditCourseViewController.swift in Sources */,
 				0B90F4BA1C4A0B8A00B8C6BD /* CoursesListViewController.swift in Sources */,
 				0BFF63D21C4A6518007AF0B0 /* Classes.swift in Sources */,
+				0BE50B251C4B595B00381A75 /* Menu.swift in Sources */,
 				0B90F4B01C4A07E800B8C6BD /* SWRevealViewController.m in Sources */,
 				0BFF64101C4A8BE5007AF0B0 /* ContainerMainView.swift in Sources */,
 				0BFF64141C4A8C36007AF0B0 /* SideMenuController.swift in Sources */,
