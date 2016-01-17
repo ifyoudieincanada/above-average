@@ -21,20 +21,19 @@ class Semester: NSObject {
 
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
- 
+
     }
 
-    /*func toJSON(){
+    func toJSON(){
       var strSemester:String = "semester:{ "
       strSemester = strSemester + "term:'" + term + "',"
-      strSemester = strSemester + "year:'" + String(year) + "',"
       strSemester = strSemester + "courses:["
       for index in 0...courses.count-2{
         strSemester = strSemester + courses[(index)].toJSON() + ","
       }
       strSemester = strSemester + courses[courses.count-1].toJSON() + "};"
 
-    }*/
+    }
 
 }
 
