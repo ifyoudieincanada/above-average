@@ -29,9 +29,9 @@ class Semester: NSObject {
       strSemester = strSemester + "term:'" + term + "',"
       strSemester = strSemester + "courses:["
       for index in 0...courses.count-2{
-        strSemester = strSemester + courses[(index)].toJSON() + ","
+       // strSemester = strSemester + courses[(index)].toJSON() + ","
       }
-      strSemester = strSemester + courses[courses.count-1].toJSON() + "};"
+     // strSemester = strSemester + courses[courses.count-1].toJSON() + "};"
 
     }
 
@@ -118,7 +118,7 @@ class Course: NSObject {
             return false
         }
     }
-
+/*
     // Converts a catagory triple into a JSON string
     func categoryToJSON(category:String, weight:Int, avg:Double, incat:[Assignment]) -> String {
         var lbl = ["name","weight","avg"]
@@ -149,14 +149,23 @@ class Course: NSObject {
         //@TODO: ambiguous reference to member 'count'
         strCourse = strCourse + categoryToJSON(assignmentCategories[assignmentCategories.count-1])
         //assignments
+<<<<<<< Updated upstream
         var AssignArrLast = assignments.count-1;
         for j in 0..<AssignArrLast {
+=======
+        var AssignArrLast:Int = Int(assignments.count-1);
+        for j:Int in 0...assignments.count-2 {
+>>>>>>> Stashed changes
             strCourse = strCourse + assignments[j].toJSON() + ","
         }
         strCourse = strCourse + assignments[assignments.count-1].toJSON()
         return strCourse;
     } //toJSON end
+<<<<<<< Updated upstream
     */
+=======
+*/
+>>>>>>> Stashed changes
 } // Course end
 
     func calculateCategoryAvg(assignments:[Assignment]) -> Double {

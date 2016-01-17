@@ -16,7 +16,8 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var semesterCoursesTable: UITableView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if semesterArray == [] {
+       if semesterArray.count == 0 {
+        //if semesterArray == [] {
             return 0
         }
         else {
@@ -63,6 +64,12 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        /*
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }*/
     }
     
     override func didReceiveMemoryWarning() {
