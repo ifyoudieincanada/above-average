@@ -118,39 +118,42 @@ class Course: NSObject {
             return false
         }
     }
-/*
+
     // Converts a catagory triple into a JSON string
-    func categoryToJSON(category:String, weight:Int, avg:Double, incat:[Assignment]) -> String{
-      var lbl = ["name","weight","avg"]
-      var strCat:String = "{ "
-      strCat = strCat + lbl[0] + ":'" + String(name)   + "'" + ","
-      strCat = strCat + lbl[1] + ":'" + String(weight) + "'" + ","
-      strCat = strCat + lbl[2] + ":'" + String(avg)    + "'"
-      strCat = strCat + "}" // Commas will be added between weights by handler
-      return strCat
+    func categoryToJSON(category:String, weight:Int, avg:Double, incat:[Assignment]) -> String {
+        var lbl = ["name","weight","avg"]
+        var strCat:String = "{ "
+        strCat = strCat + lbl[0] + ":'" + String(name)   + "'" + ","
+        strCat = strCat + lbl[1] + ":'" + String(weight) + "'" + ","
+        strCat = strCat + lbl[2] + ":'" + String(avg)    + "'"
+        strCat = strCat + "}" // Commas will be added between weights by handler
+        return strCat
     }
 
     // Converts and groups instance's elements into JSON compatible string
     func toJSON() -> String {
-      var strCourse:String = "{ "
-      var dataMemb = ["name","id","categories","assignments","overall"]
-      // course info
-      strCourse = strCourse + dataMemb[0] + ":'"  + name +            "',"
-      strCourse = strCourse + dataMemb[1] + ":'"  + identifier +      "',"
-      strCourse = strCourse + dataMemb[4] + ":'"  + String(overallPercent) +  "',"
-      //categories
-      strCourse = strCourse + dataMemb[2] + ":["
-      for index in 0...assignmentCategories.count-2{
-        strCourse = strCourse + categoryToJSON(assignmentCategories[index]) + ","
-      }
-      strCourse = strCourse + categoryToJSON(assignmentCategories[assignmentCategories.count-1])
-      //assignments
-      for index in 0...assignments.count-2{
-        strCourse = strCourse + assignments[index].toJSON() + ","
-      }
-      strCourse = strCourse + assignments[assignments.count-1].toJSON()
-      return strCourse;
-    } //toJSON end*/
+        var strCourse:String = "{ "
+        var dataMemb = ["name","id","categories","assignments","overall"]
+        // course info
+        strCourse = strCourse + dataMemb[0] + ":'"  + name +            "',"
+        strCourse = strCourse + dataMemb[1] + ":'"  + identifier +      "',"
+        strCourse = strCourse + dataMemb[4] + ":'"  + String(overallPercent) +  "',"
+        //categories
+        strCourse = strCourse + dataMemb[2] + ":["
+        for i:Int in 0..<assignmentCategories.count-1 {
+            var Cat = assignmentCategories[i]
+            strCourse = strCourse + categoryToJSON(Cat.category,weight: Cat.weight,avg: Cat.avg,incat: Cat.incat) + ","
+        }
+        
+        //ambiguous reference to member 'count'
+        strCourse = strCourse + categoryToJSON(assignmentCategories[assignmentCategories.count-1])
+        //assignments
+        for j:Int in 0...assignments.count-2 {
+            strCourse = strCourse + assignments[j].toJSON() + ","
+        }
+        strCourse = strCourse + assignments[assignments.count-1].toJSON()
+        return strCourse;
+    } //toJSON end
 } // Course end
 
     func calculateCategoryAvg(assignments:[Assignment]) -> Double {
