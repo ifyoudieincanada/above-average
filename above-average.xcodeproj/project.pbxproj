@@ -122,9 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				0B90F4AC1C4A07C900B8C6BD /* SWRevealViewController */,
-				0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */,
-				0B90F4801C4A073E00B8C6BD /* ViewController.swift */,
-				0BFF63D11C4A6518007AF0B0 /* Classes.swift */,
 				0B90F4B71C4A0B4000B8C6BD /* AddACourseViewController.swift */,
 				0B7652061C4A3BD50070E4B6 /* EditCourseViewController.swift */,
 				0B7652041C4A3ADD0070E4B6 /* AddAnAssignmentViewController.swift */,
@@ -132,9 +129,12 @@
 				0B90F4B91C4A0B8A00B8C6BD /* CoursesListViewController.swift */,
 				0B3442651C4AC5DF00AAC7C7 /* AddASemesterViewController.swift */,
 				0BE50B241C4B595B00381A75 /* Menu.swift */,
-				0B3442631C4AC51E00AAC7C7 /* ChangeSemesterViewController.swift */,
 				0B90F4821C4A073E00B8C6BD /* Main.storyboard */,
+				0B3442631C4AC51E00AAC7C7 /* ChangeSemesterViewController.swift */,
 				0B90F4BD1C4A0C8800B8C6BD /* MenuCourseViewController.swift */,
+				0BFF63D11C4A6518007AF0B0 /* Classes.swift */,
+				0B90F4801C4A073E00B8C6BD /* ViewController.swift */,
+				0B90F47E1C4A073E00B8C6BD /* AppDelegate.swift */,
 				0B90F4851C4A073E00B8C6BD /* Assets.xcassets */,
 				0B90F4871C4A073E00B8C6BD /* LaunchScreen.storyboard */,
 				0B90F48A1C4A073E00B8C6BD /* Info.plist */,

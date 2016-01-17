@@ -9,8 +9,8 @@
 import Foundation
 
 import UIKit
-
-class Semester: NSObject {
+//, NSCoding
+class Semester:NSObject  {
     var term:String
     var courses:[Course]
 
@@ -18,7 +18,17 @@ class Semester: NSObject {
         term = a
         courses = []
     }
-
+    
+    // Writes to persistant data
+    //func encodeWithCoder(_ aCoder: NSCoder){
+    
+    //}
+    
+    // Reads from persistant data
+    //init?(coder aDecoder: NSCoder){
+        
+    //}
+    
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
 

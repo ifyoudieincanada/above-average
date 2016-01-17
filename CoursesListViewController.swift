@@ -17,7 +17,6 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        if semesterArray.count == 0 {
-        //if semesterArray == [] {
             return 0
         }
         else {
@@ -36,21 +35,23 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         print(index)
-
     }
     
-   /* func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
+    /*
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+
         if editingStyle == UITableViewCellEditingStyle.Delete {     //swipee to the left (delete)
-            
-            semesterArray[0].courses.removeAtIndex(indexPath.row)
-            
-            semesterCoursesTable.reloadData()
+
+            toDoList.removeAtIndex(indexPath.row)
+
+            NSUserDefaults.standardUserDefaults().setObject(toDoList, forKey: "toDoList")
+
+            toDoListTable.reloadData()
         }
-    }*/
-    
+    }
+*/
+
     override func viewDidAppear(animated: Bool) {
-        
         semesterCoursesTable.reloadData()
     }
 
@@ -64,12 +65,6 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        /*
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }*/
     }
     
     override func didReceiveMemoryWarning() {

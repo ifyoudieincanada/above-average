@@ -8,12 +8,9 @@
 
 import UIKit
 
-var semesterArrayIndex = 0
-
 class ChangeSemesterViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var changeSemesterTable: UITableView!
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return semesterArray.count

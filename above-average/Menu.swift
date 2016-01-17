@@ -9,9 +9,15 @@
 import UIKit
 
 var semesterArray = [Semester]()
+var semesterArrayIndex = 0
 
 class Menu: UIViewController {
 
+    
+    @IBAction func ClassSelectionButton(sender: AnyObject) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
