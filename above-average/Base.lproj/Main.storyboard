@@ -776,7 +776,11 @@
                                                 <segue destination="mKD-v0-kTG" kind="show" id="Mvp-12-gvw"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8OB-Sh-KcE"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8OB-Sh-KcE">
+                                            <connections>
+                                                <action selector="addAssignmentButton:" destination="jig-hy-7bA" id="jAv-em-Chp"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -828,16 +832,18 @@
                                     <action selector="dateSelected:" destination="jig-hy-7bA" eventType="valueChanged" id="oEU-cr-vfJ"/>
                                 </connections>
                             </datePicker>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i7a-HT-WBb">
+                                <rect key="frame" x="0.0" y="356" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="assignmentNameTextField" destination="dzm-GH-ymW" id="9tW-8u-zMK"/>
+                        <outlet property="categoryPicker" destination="i7a-HT-WBb" id="jG9-lC-466"/>
                         <outlet property="dueDate" destination="99d-DG-SDs" id="xhn-IJ-dIY"/>
-                        <outlet property="earnedPointsLabel" destination="70R-Hr-bfb" id="al0-Ea-pqa"/>
                         <outlet property="earnedPointsTextField" destination="SVK-6b-oZj" id="gun-Dm-dIN"/>
-                        <outlet property="totalPointsLabel" destination="cA8-Qv-k66" id="Bul-1g-bso"/>
                         <outlet property="totalPointsTextField" destination="nYJ-9K-w5j" id="v2l-G0-HIW"/>
                     </connections>
                 </viewController>
@@ -931,6 +937,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLk-71-eKs">
+                                <rect key="frame" x="254" y="119" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <segue destination="jig-hy-7bA" kind="show" id="43K-AV-saD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -949,9 +962,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eob-Po-OTd"/>
-        <segue reference="A8Z-1E-N4u"/>
-        <segue reference="f7g-M7-fKI"/>
         <segue reference="O8n-Tb-klC"/>
+        <segue reference="f7g-M7-fKI"/>
+        <segue reference="A8Z-1E-N4u"/>
+        <segue reference="M2g-gx-Gb6"/>
     </inferredMetricsTieBreakers>
 </document>
