@@ -8,6 +8,7 @@
 
 import UIKit
 
+//semesterArrayIndex
 class CoursesListViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -15,36 +16,18 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var semesterCoursesTable: UITableView!
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-        //return semesterArray[0].courses.count        //return number of courses in the semester
+        return semesterArray[semesterArrayIndex].courses.count
     }
-    
-   // var objects: NSMutableArray! = NSMutableArray()
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        
         cell.accessoryType = .DetailDisclosureButton
-        
-        cell.textLabel?.text = "cell"
-        //cell.textLabel?.text = courseArray[indexPath.row].name + "  " + String(courseArray[indexPath.row].overallPercent)
-        //cell.button.tag = indexPath.row
-        
+        cell.textLabel?.text = semesterArray[semesterArrayIndex].courses[indexPath.row].name + "  " + String(semesterArray[semesterArrayIndex].courses[indexPath.row].overallPercent)
         return cell
     }
-    /*
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! SemesterTableCell
-        
-        cell.titleLabel.text = self.objects.objectAtIndex(indexPath.row) as? String
-        cell.logButton.tag = indexPath.row;
-        cell.logButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
-        return cell
-    }*/
-    
+
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-        //doSomethingWithItem(indexPath.row)
         let index = indexPath.row
         print(index)
 

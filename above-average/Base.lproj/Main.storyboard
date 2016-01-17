@@ -113,10 +113,14 @@
                                     <navigationItem title="Change Semester" id="V5m-nj-wPp">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Mim-Jk-bYF">
                                             <connections>
-                                                <segue destination="dZV-fw-47D" kind="show" id="i0U-TE-R1Q"/>
+                                                <segue destination="RVT-Kc-qcM" kind="show" id="sxO-wk-GB5"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VyJ-5M-4OE"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VyJ-5M-4OE">
+                                            <connections>
+                                                <segue destination="20P-zb-Uej" kind="show" id="CLa-M9-pX7"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -252,6 +256,11 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Semester" id="6eC-1k-uac">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hBg-Ja-7Ud">
+                                            <connections>
+                                                <segue destination="85q-SK-n2k" kind="showDetail" id="jFM-m7-TdB"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Haj-QF-vsg">
                                             <connections>
                                                 <segue destination="o4m-gy-yjH" kind="show" id="bcZ-jm-dnF"/>
@@ -270,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70c-Fw-N3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="1021"/>
+            <point key="canvasLocation" x="1091" y="1021"/>
         </scene>
         <!--AddA Course View Controller-->
         <scene sceneID="HsX-a9-Zhn">
@@ -859,8 +868,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ymL-57-oXP"/>
         <segue reference="uxM-yl-bY1"/>
+        <segue reference="jFM-m7-TdB"/>
         <segue reference="Mvp-12-gvw"/>
     </inferredMetricsTieBreakers>
 </document>

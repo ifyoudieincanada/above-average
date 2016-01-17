@@ -8,6 +8,8 @@
 
 import UIKit
 
+var semesterArrayIndex = 0
+
 class ChangeSemesterViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var changeSemesterTable: UITableView!
@@ -29,11 +31,8 @@ class ChangeSemesterViewController: UIViewController, UITableViewDelegate {
         //doSomethingWithItem(indexPath.row)
         let index = indexPath.row
         print(index)
+        semesterArrayIndex = index
     }
-    
-    @IBOutlet weak var semesterListPicker: UIPickerView!
-    //idk how to use this but its cool
-    //we can do a table wih buttons instead
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +43,4 @@ class ChangeSemesterViewController: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

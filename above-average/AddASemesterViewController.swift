@@ -13,10 +13,8 @@ var semesterArray: [Semester] = []
 class AddASemesterViewController: UIViewController {
     
     @IBAction func addSemesterButton(sender: AnyObject) {
-        
         let s = Semester(a: semesterNameTextField.text!)
         semesterArray.append(s)
-        
     }
     
     @IBOutlet weak var semesterNameTextField: UITextField!
@@ -30,6 +28,4 @@ class AddASemesterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
