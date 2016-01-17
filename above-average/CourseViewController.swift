@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseViewController: UIViewController {
+class CourseViewController: UIViewController, UITableViewDelegate {
     
     
     @IBOutlet weak var courseMenuButton: UIBarButtonItem!
@@ -23,9 +23,17 @@ class CourseViewController: UIViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1;
+        return semesterArray[semesterArrayIndex].courses[courseIndex].assignments.count;
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+
+        cell.textLabel?.text = semesterArray[semesterArrayIndex].courses[courseIndex].assignments[indexPath.row].name + "  " + String(semesterArray[semesterArrayIndex].courses[courseIndex].assignments[indexPath.row].percentage)
+
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +45,14 @@ class CourseViewController: UIViewController {
         
         courseAverageLabel.text = String(semesterArray[semesterArrayIndex].courses[courseIndex].overallPercent)
         
+        /*
         if self.revealViewController() != nil {
             courseMenuButton.target = self.revealViewController()
             courseMenuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        */
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -37,6 +37,7 @@ class CoursesListViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
         print(index)
+        print("jkalsnvkdlsankldvkmsaksdnvdlsaksnvkldsnaklsnkglnasklcmlajewkn")
         courseIndex = index
         performSegueWithIdentifier("goToCourse", sender: self)
     }

@@ -26,7 +26,7 @@ class ChangeSemesterViewController: UIViewController, UITableViewDelegate {
     
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         let index = indexPath.row
-        print(index)
+        //print(index)
         semesterArrayIndex = index
     }
     
