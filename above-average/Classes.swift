@@ -131,6 +131,7 @@ class Course: NSObject {
     }
 
     // Converts and groups instance's elements into JSON compatible string
+    /*
     func toJSON() -> String {
         var strCourse:String = "{ "
         var dataMemb = ["name","id","categories","assignments","overall"]
@@ -144,16 +145,18 @@ class Course: NSObject {
             var Cat = assignmentCategories[i]
             strCourse = strCourse + categoryToJSON(Cat.category,weight: Cat.weight,avg: Cat.avg,incat: Cat.incat) + ","
         }
-        
-        //ambiguous reference to member 'count'
+
+        //@TODO: ambiguous reference to member 'count'
         strCourse = strCourse + categoryToJSON(assignmentCategories[assignmentCategories.count-1])
         //assignments
-        for j:Int in 0...assignments.count-2 {
+        var AssignArrLast = assignments.count-1;
+        for j in 0..<AssignArrLast {
             strCourse = strCourse + assignments[j].toJSON() + ","
         }
         strCourse = strCourse + assignments[assignments.count-1].toJSON()
         return strCourse;
     } //toJSON end
+    */
 } // Course end
 
     func calculateCategoryAvg(assignments:[Assignment]) -> Double {
