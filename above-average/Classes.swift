@@ -14,6 +14,15 @@ import UIKit
 // Info: https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
 struct EncoderKeys {
   static let selfKey = "semester"
+
+  // Assignment Encode/Decode Keys
+static let nameKey = "nameKeyStr"
+static let categoryKey = "categoryKeyStr"
+static let doneKey = "doneKeyStr"
+static let dueKey = "dueKeyStr"
+static let pointsEarnedKey = "pointsEarnedKeyStr"
+static let pointsPossibleKey = "pointsPossibleKeyStr"
+static let percentageKey = "percentageKeyStr"
 }
 
 class Semester:NSObject {
@@ -196,7 +205,7 @@ class Course: NSObject {
     }
 
 
-class Assignment {
+class Assignment:NSObject, NSCoding  {
     var name:String
     var category:String
     var done:Bool
@@ -214,7 +223,32 @@ class Assignment {
         pointsPossible = f
         percentage = e/f
     }
+    /*
+    // Persistant data writer
+    func encodeWithCoder(aCoder: NSCoder){
+      aCoder.encodeObject(self.name, forKey: EncoderKeys.nameKey)
+      aCoder.encodeObject(self.category, forKey: EncoderKeys.categoryKey)
+      aCoder.encodeBool(self.done, forKey: EncoderKeys.doneKey)
+      aCoder.encodeObject(self.due, forKey: EncoderKeys.dueKey)
+      aCoder.encodeDouble(self.pointsEarned, forKey: EncoderKeys.pointsEarnedKey)
+      aCoder.encodeDouble(self.pointsPossible, forKey: EncoderKeys.pointsPossibleKey)
+      aCoder.encodeDouble(self.percentage, forKey: EncoderKeys.percentageKey)
+    }
 
+    // Persistant data reader
+    required convenience init?(coder aDecoder: NSCoder) {
+      // Decode to NSObject and "downcast" to correct type if needed
+      let name = aDecoder.decodeObjectForKey(EncoderKeys.nameKey) as! String
+      let category = aDecoder.decodeObjectForKey(EncoderKeys.categoryKey) as! String
+      let done = aDecoder.decodeObjectForKey(EncoderKeys.doneKey)
+      let due = aDecoder.decodeObjectForKey(EncoderKeys.dueKey) as! NSDate
+      let pointsEarned = aDecoder.decodeObjectForKey(EncoderKeys.pointsEarnedKey)
+      let pointsPossible = aDecoder.decodeObjectForKey(EncoderKeys.pointsPossibleKey)
+      let percentage = aDecoder.decodeObjectForKey(EncoderKeys.percentageKey)
+      // Call default init and pass decoded values as arguments
+      self.init(name,category,done,due,pointsEarned,pointsPossible,percentage)
+    }
+    */
     // Converts an Assignment class to a small JSON class
     func toJSON() -> String{
       var strAssignment:String = "{ "
