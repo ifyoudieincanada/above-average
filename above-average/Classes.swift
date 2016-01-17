@@ -18,19 +18,19 @@ struct EncoderKeys {
   static let courses = "coursesKey"
 
   // Course Encode/Decode Keys
-static let cNameKey = "cNameKey"
-static let cIdentifierKey = "cIdentifierKey"
-static let cAssignmentCategoriesKey = "cAssignmentCategoriesKey"
-static let cAssignmentsKey = "cAssignmentsKey"
-static let cOverallPercentKey = "cOverallPercentKey"
+  static let cNameKey = "cNameKey"
+  static let cIdentifierKey = "cIdentifierKey"
+  static let cAssignmentCategoriesKey = "cAssignmentCategoriesKey"
+  static let cAssignmentsKey = "cAssignmentsKey"
+  static let cOverallPercentKey = "cOverallPercentKey"
   // Assignment Encode/Decode Keys
-static let nameKey = "nameKeyStr"
-static let categoryKey = "categoryKeyStr"
-static let doneKey = "doneKeyStr"
-static let dueKey = "dueKeyStr"
-static let pointsEarnedKey = "pointsEarnedKeyStr"
-static let pointsPossibleKey = "pointsPossibleKeyStr"
-static let percentageKey = "percentageKeyStr"
+  static let nameKey = "nameKeyStr"
+  static let categoryKey = "categoryKeyStr"
+  static let doneKey = "doneKeyStr"
+  static let dueKey = "dueKeyStr"
+  static let pointsEarnedKey = "pointsEarnedKeyStr"
+  static let pointsPossibleKey = "pointsPossibleKeyStr"
+  static let percentageKey = "percentageKeyStr"
 }
 
 class Semester:NSObject {
