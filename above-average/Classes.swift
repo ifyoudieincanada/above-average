@@ -10,7 +10,13 @@ import Foundation
 
 import UIKit
 
-class Semester:NSObject {       //, NSCoding  {
+// Stores constant encoder valus
+// Info: https://developer.apple.com/library/ios/referencelibrary/GettingStarted/DevelopiOSAppsSwift/Lesson10.html#//apple_ref/doc/uid/TP40015214-CH14-SW1
+struct EncoderKeys {
+  static let selfKey = "semester"
+}
+
+class Semester:NSObject {
     var term:String
     var courses:[Course]
 
@@ -19,15 +25,17 @@ class Semester:NSObject {       //, NSCoding  {
         courses = []
     }
     
-    // Writes to persistant data
-   /* func encodeWithCoder(_ aCoder: NSCoder){
-    
+    /*
+    // Persistant data writer
+    func encodeWithCoder(aCoder: NSCoder){
+      aCoder.encodeObject(self, forKey: EncoderKeys.selfKey)
     }
-    
-    // Reads from persistant data
-    init?(coder aDecoder: NSCoder){
-        
-    }*/
+
+    // Persistant data reader
+    required convenience init?(coder aDecoder: NSCoder) {
+      let self = aDecoder.decodeObjectForKey(EncoderKeys.selfKey) as! NSObject
+    }
+    */
     
     func removeCourse(removeMe:String) {
         courses = courses.filter({ $0.name != removeMe })
@@ -128,7 +136,7 @@ class Course: NSObject {
             return false
         }
     }
-    
+
     // Converts a catagory triple into a JSON string
     func categoryToJSON(category:String, weight:Int, avg:Double, incat:[Assignment]) -> String {
         var lbl = ["name","weight","avg"]
